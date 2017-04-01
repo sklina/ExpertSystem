@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,5 +14,10 @@
          </font>
       </Label>
       <Label layoutX="44.0" layoutY="79.0" prefHeight="17.0" prefWidth="399.0" text="Машина не едет. Сиди дома :D" />
+      <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="333.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/remont.jpg" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
