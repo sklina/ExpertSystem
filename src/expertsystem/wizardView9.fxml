@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -28,5 +29,10 @@
             <Font size="14.0" />
          </font>
       </CheckBox>
+      <ImageView fitHeight="142.0" fitWidth="183.0" layoutX="306.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/contact.jpg" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
