@@ -24,9 +24,9 @@
             <Font size="14.0" />
          </font>
       </CheckBox>
-      <ImageView fitHeight="142.0" fitWidth="183.0" layoutX="296.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="184.0" fitWidth="269.0" layoutX="217.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/dvigatel.jpg" />
+            <Image url="@img/DvigVraw.jpg" />
          </image>
       </ImageView>
    </children>

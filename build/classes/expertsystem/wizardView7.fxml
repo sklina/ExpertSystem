@@ -24,9 +24,9 @@
             <Font size="14.0" />
          </font>
       </CheckBox>
-      <ImageView fitHeight="142.0" fitWidth="183.0" layoutX="318.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="142.0" fitWidth="183.0" layoutX="286.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/power.jpg" />
+            <Image url="@img/power2.jpg" />
          </image>
       </ImageView>
    </children>
