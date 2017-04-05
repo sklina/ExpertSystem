@@ -16,9 +16,9 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <ImageView fitHeight="153.0" fitWidth="153.0" layoutX="333.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="174.0" fitWidth="167.0" layoutX="319.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@img/remont.jpg" />
+            <Image url="@img/remont2.jpg" />
          </image>
       </ImageView>
       <TabPane layoutX="31.0" layoutY="52.0" prefHeight="161.0" prefWidth="294.0" stylesheets="@tabStyle.css" tabClosingPolicy="UNAVAILABLE">
@@ -27,7 +27,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="83.0" prefWidth="309.0">
                      <children>
-                        <Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="174.0" text="Машина не едет. Сиди дома :D" />
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="72.0" prefWidth="237.0" text="    К сожалению, нам не удалось выявить причину неисправности. Советуем Вам отвезти автомобиль к механику." textAlignment="JUSTIFY" wrapText="true" />
                      </children>
                   </AnchorPane>
             </content>
