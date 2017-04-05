@@ -14,8 +14,8 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView5.fxml")
-public class WizardView5Controller {
+@ViewController("ignitionPage.fxml")
+public class IgnitionPageController {
 	
 	@FXML
 	@ActionTrigger("IgnitionNorm")

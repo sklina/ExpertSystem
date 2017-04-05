@@ -14,23 +14,24 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView7.fxml")
-public class WizardView7Controller {
+@ViewController("rotationPage.fxml")
+public class RotationPageController {
 	@FXML
-	@ActionTrigger("Low")
-    private CheckBox cbLow;
+	@ActionTrigger("Rotate")
+    private CheckBox cbRotate;
 	
 	@FXML
-	@ActionTrigger("Normal")
-    private CheckBox cbNormal;
+	@ActionTrigger("NoRotate")
+    private CheckBox cbNoRotate;
 	
-	@ActionMethod("Low")
-    public void onLow() throws VetoException, FlowException {
-		if (cbLow.isSelected()) cbNormal.setSelected(false);
+		
+	@ActionMethod("Rotate")
+    public void onRotate() throws VetoException, FlowException {
+		if (cbRotate.isSelected()) cbNoRotate.setSelected(false);
 	}
 	
-	@ActionMethod("Normal")
-    public void onNormal() throws VetoException, FlowException {
-		if (cbNormal.isSelected()) cbLow.setSelected(false);
+	@ActionMethod("NoRotate")
+    public void onNoRotate() throws VetoException, FlowException {
+		if (cbNoRotate.isSelected()) cbRotate.setSelected(false);
 	}
 }

@@ -14,9 +14,8 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView12.fxml")
-public class WizardView12Controller {
-	
+@ViewController("ignitionCoilPage.fxml")
+public class IgnitionCoilPageController {
 	@FXML
 	@ActionTrigger("Yes")
     private CheckBox cbYes;

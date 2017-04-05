@@ -14,23 +14,24 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView8.fxml")
-public class WizardView8Controller {
-	@FXML
-	@ActionTrigger("Yes")
-    private CheckBox cbYes;
+@ViewController("batteryChargePage.fxml")
+public class BatteryChargePageController {
 	
 	@FXML
-	@ActionTrigger("No")
-    private CheckBox cbNo;
+	@ActionTrigger("Charged")
+    private CheckBox cbCharged;
 	
-	@ActionMethod("Yes")
-    public void onYes() throws VetoException, FlowException {
-		if (cbYes.isSelected()) cbNo.setSelected(false);
+	@FXML
+	@ActionTrigger("NotCharged")
+    private CheckBox cbNotCharged;
+	
+	@ActionMethod("Charged")
+    public void onCharged() throws VetoException, FlowException {
+		if (cbCharged.isSelected()) cbNotCharged.setSelected(false);
 	}
 	
-	@ActionMethod("No")
-    public void onNo() throws VetoException, FlowException {
-		if (cbNo.isSelected()) cbYes.setSelected(false);
+	@ActionMethod("NotCharged")
+    public void onNotCharged() throws VetoException, FlowException {
+		if (cbNotCharged.isSelected()) cbCharged.setSelected(false);
 	}
 }

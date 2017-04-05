@@ -14,24 +14,23 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView2.fxml")
-public class WizardView2Controller {
+@ViewController("engineWorkPage.fxml")
+public class EngineWorkPageController {
 	@FXML
-	@ActionTrigger("Yes")
-    private CheckBox cbYes;
+	@ActionTrigger("Normal")
+    private CheckBox cbNormal;
 	
 	@FXML
-	@ActionTrigger("No")
-    private CheckBox cbNo;
+	@ActionTrigger("Bad")
+    private CheckBox cbBad;
 	
-	@ActionMethod("Yes")
-    public void onYes() throws VetoException, FlowException {
-		if (cbYes.isSelected()) cbNo.setSelected(false);
-		
+	@ActionMethod("Normal")
+    public void onNormal() throws VetoException, FlowException {
+		if (cbNormal.isSelected()) cbBad.setSelected(false);
 	}
 	
-	@ActionMethod("No")
-    public void onNo() throws VetoException, FlowException {
-		if (cbNo.isSelected()) cbYes.setSelected(false);
+	@ActionMethod("Bad")
+    public void onBad() throws VetoException, FlowException {
+		if (cbBad.isSelected()) cbNormal.setSelected(false);
 	}
 }

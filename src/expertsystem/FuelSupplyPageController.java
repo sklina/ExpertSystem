@@ -14,24 +14,24 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView4.fxml")
-public class WizardView4Controller {
-	@FXML
-	@ActionTrigger("Rotate")
-    private CheckBox cbRotate;
+@ViewController("fuelSupply1Page.fxml")
+public class FuelSupplyPageController {
 	
 	@FXML
-	@ActionTrigger("NoRotate")
-    private CheckBox cbNoRotate;
+	@ActionTrigger("Inert")
+    private CheckBox cbInert;
 	
-		
-	@ActionMethod("Rotate")
-    public void onRotate() throws VetoException, FlowException {
-		if (cbRotate.isSelected()) cbNoRotate.setSelected(false);
+	@FXML
+	@ActionTrigger("IDK")
+    private CheckBox cbIDK;
+	
+	@ActionMethod("Inert")
+    public void onInert() throws VetoException, FlowException {
+		if (cbInert.isSelected()) cbIDK.setSelected(false);
 	}
 	
-	@ActionMethod("NoRotate")
-    public void onNoRotate() throws VetoException, FlowException {
-		if (cbNoRotate.isSelected()) cbRotate.setSelected(false);
+	@ActionMethod("IDK")
+    public void onIDK() throws VetoException, FlowException {
+		if (cbIDK.isSelected()) cbInert.setSelected(false);
 	}
 }

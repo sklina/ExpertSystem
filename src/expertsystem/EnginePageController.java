@@ -14,8 +14,8 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView10.fxml")
-public class WizardView10Controller {
+@ViewController("enginePage.fxml")
+public class EnginePageController {
 	@FXML
 	@ActionTrigger("Yes")
     private CheckBox cbYes;
@@ -27,6 +27,7 @@ public class WizardView10Controller {
 	@ActionMethod("Yes")
     public void onYes() throws VetoException, FlowException {
 		if (cbYes.isSelected()) cbNo.setSelected(false);
+		
 	}
 	
 	@ActionMethod("No")

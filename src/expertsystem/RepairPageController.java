@@ -8,6 +8,6 @@ import io.datafx.controller.ViewController;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView1.fxml")
-public class WizardView1Controller {
+@ViewController("recommendationToRepairPage.fxml")
+public class RepairPageController {
 }

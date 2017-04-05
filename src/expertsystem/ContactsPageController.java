@@ -14,8 +14,8 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView9.fxml")
-public class WizardView9Controller {
+@ViewController("contactsPage.fxml")
+public class ContactsPageController {
 	@FXML
 	@ActionTrigger("Clear")
     private CheckBox cbClear;

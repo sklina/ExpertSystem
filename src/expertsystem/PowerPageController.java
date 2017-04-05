@@ -14,24 +14,23 @@ import javafx.scene.control.CheckBox;
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
-@ViewController("wizardView6.fxml")
-public class WizardView6Controller {
+@ViewController("powerPage.fxml")
+public class PowerPageController {
+	@FXML
+	@ActionTrigger("Low")
+    private CheckBox cbLow;
 	
 	@FXML
-	@ActionTrigger("Charged")
-    private CheckBox cbCharged;
+	@ActionTrigger("Normal")
+    private CheckBox cbNormal;
 	
-	@FXML
-	@ActionTrigger("NotCharged")
-    private CheckBox cbNotCharged;
-	
-	@ActionMethod("Charged")
-    public void onCharged() throws VetoException, FlowException {
-		if (cbCharged.isSelected()) cbNotCharged.setSelected(false);
+	@ActionMethod("Low")
+    public void onLow() throws VetoException, FlowException {
+		if (cbLow.isSelected()) cbNormal.setSelected(false);
 	}
 	
-	@ActionMethod("NotCharged")
-    public void onNotCharged() throws VetoException, FlowException {
-		if (cbNotCharged.isSelected()) cbCharged.setSelected(false);
+	@ActionMethod("Normal")
+    public void onNormal() throws VetoException, FlowException {
+		if (cbNormal.isSelected()) cbLow.setSelected(false);
 	}
 }
