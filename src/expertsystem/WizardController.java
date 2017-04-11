@@ -41,19 +41,19 @@ public class WizardController {
 
     @PostConstruct
     public void init() throws FlowException {
-        Flow flow = new Flow(WizardView1Controller.class).
-                withLink(WizardView1Controller.class, "next", WizardView2Controller.class).
-                withLink(WizardView2Controller.class, "next", WizardView3Controller.class).
-                withLink(WizardView3Controller.class, "next", WizardView4Controller.class).
-				withLink(WizardView4Controller.class, "next", WizardView5Controller.class).
-				withLink(WizardView5Controller.class, "next", WizardView6Controller.class).
-                withLink(WizardView6Controller.class, "next", WizardView7Controller.class).
-                withLink(WizardView7Controller.class, "next", WizardView8Controller.class).
-				withLink(WizardView8Controller.class, "next", WizardView9Controller.class).
-				withLink(WizardView9Controller.class, "next", WizardView10Controller.class).
-                withLink(WizardView10Controller.class, "next", WizardView11Controller.class).
-                withLink(WizardView11Controller.class, "next", WizardView12Controller.class).
-				withLink(WizardView12Controller.class, "next", WizardView13Controller.class);
+        Flow flow = new Flow(WelcomePageController.class).
+                withLink(WelcomePageController.class, "next", EnginePageController.class).
+                withLink(EnginePageController.class, "next", EngineWorkPageController.class).
+                withLink(EngineWorkPageController.class, "next", RotationPageController.class).
+				withLink(RotationPageController.class, "next", IgnitionPageController.class).
+				withLink(IgnitionPageController.class, "next", BatteryChargePageController.class).
+                withLink(BatteryChargePageController.class, "next", PowerPageController.class).
+                withLink(PowerPageController.class, "next", FuelPageController.class).
+				withLink(FuelPageController.class, "next", ContactsPageController.class).
+				withLink(ContactsPageController.class, "next", IgnitionCoilPageController.class).
+                withLink(IgnitionCoilPageController.class, "next", FuelSupplyPageController.class).
+                withLink(FuelSupplyPageController.class, "next", KnockInTheEnginePageController.class).
+				withLink(KnockInTheEnginePageController.class, "next", RepairPageController.class);
 
         flowHandler = flow.createHandler();
         centerPane.getChildren().add(flowHandler.start(new AnimatedFlowContainer(Duration.millis(320), ContainerAnimations.SWIPE_LEFT)));
@@ -66,7 +66,7 @@ public class WizardController {
     @ActionMethod("back")
     public void onBack() throws VetoException, FlowException {
         flowHandler.navigateBack();
-        if(flowHandler.getCurrentViewControllerClass().equals(WizardView1Controller.class)) {
+        if(flowHandler.getCurrentViewControllerClass().equals(WelcomePageController.class)) {
             backButton.setDisable(true);
         } else {
             backButton.setDisable(false);
@@ -76,7 +76,7 @@ public class WizardController {
     @ActionMethod("next")
     public void onNext() throws VetoException, FlowException {
         flowHandler.handle("next");
-        if(flowHandler.getCurrentViewControllerClass().equals(WizardView13Controller.class)) {
+        if(flowHandler.getCurrentViewControllerClass().equals(RepairPageController.class)) {
 			backButton.setDisable(true);
             nextButton.setDisable(true);
             finishButton.setDisable(false);
