@@ -10,6 +10,7 @@ public class BatteryChargePage extends WizardPage{
 
 	public BatteryChargePage() {
 		id = "BatteryChargePage";
+		title = "Заряд аккумулятора";
 		question = "Заряжен ли аккумулятор?";
 		imageUrl = "expertsystem/img/akkum.jpg";
 	}

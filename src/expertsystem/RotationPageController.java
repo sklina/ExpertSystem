@@ -1,12 +1,23 @@
 package expertsystem;
 
+import expertsystem.page.EnginePage;
+import expertsystem.page.RotationPage;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.action.ActionMethod;
 import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.util.VetoException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * View controller for a view in the wizard. This class is only needed to define the binding between the class and the
@@ -15,23 +26,27 @@ import javafx.scene.control.CheckBox;
  * @see io.datafx.controller.ViewController
  */
 @ViewController("rotationPage.fxml")
-public class RotationPageController {
+public class RotationPageController implements Initializable{
 	@FXML
-	@ActionTrigger("Rotate")
-    private CheckBox cbRotate;
-	
-	@FXML
-	@ActionTrigger("NoRotate")
-    private CheckBox cbNoRotate;
-	
+	Label question;
 		
-	@ActionMethod("Rotate")
-    public void onRotate() throws VetoException, FlowException {
-		if (cbRotate.isSelected()) cbNoRotate.setSelected(false);
-	}
+	@FXML
+	ImageView imageView;
 	
-	@ActionMethod("NoRotate")
-    public void onNoRotate() throws VetoException, FlowException {
-		if (cbNoRotate.isSelected()) cbRotate.setSelected(false);
+	@FXML
+	ComboBox<String> comboBox;
+	RotationPage page = new RotationPage();
+
+	public void createComboBox() {
+        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
+        comboBox.getItems().clear();
+        comboBox.setItems(obList);
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		imageView.setImage(new Image(page.getImageUrl()));
+		question.setText(page.getQuestion());
+		createComboBox();
 	}
 }

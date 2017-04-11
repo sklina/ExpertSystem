@@ -12,6 +12,7 @@ public class IgnitionPage extends WizardPage {
 
 	public IgnitionPage() {
 		id = "IgnitionPage";
+		title = "Система зажигания";
 		question = "Нет ли перебоев в системе зажигания?";
 		imageUrl = "expertsystem/img/zazhiganie2.jpg";
 	}

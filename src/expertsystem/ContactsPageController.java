@@ -1,12 +1,17 @@
 package expertsystem;
 
+import expertsystem.page.ContactsPage;
 import io.datafx.controller.ViewController;
-import io.datafx.controller.flow.FlowException;
-import io.datafx.controller.flow.action.ActionMethod;
-import io.datafx.controller.flow.action.ActionTrigger;
-import io.datafx.controller.util.VetoException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * View controller for a view in the wizard. This class is only needed to define the binding between the class and the
@@ -15,42 +20,27 @@ import javafx.scene.control.CheckBox;
  * @see io.datafx.controller.ViewController
  */
 @ViewController("contactsPage.fxml")
-public class ContactsPageController {
+public class ContactsPageController implements Initializable{
 	@FXML
-	@ActionTrigger("Clear")
-    private CheckBox cbClear;
-	
+	Label question;
+		
 	@FXML
-	@ActionTrigger("Burned")
-    private CheckBox cbBurned;
+	ImageView imageView;
 	
 	@FXML
-	@ActionTrigger("Dirty")
-    private CheckBox cbDirty;
-	
-	@ActionMethod("Clear")
-    public void onClear() throws VetoException, FlowException {
-		if (cbClear.isSelected()) {
-			cbBurned.setSelected(false);
-			cbDirty.setSelected(false);
-		}
-	}
-	
-	@ActionMethod("Burned")
-    public void onBurned() throws VetoException, FlowException {
-		if (cbBurned.isSelected()) {
-			cbClear.setSelected(false);
-			cbDirty.setSelected(false);
-		}
+	ComboBox<String> comboBox;
+	ContactsPage page = new ContactsPage();
 
+	public void createComboBox() {
+        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
+        comboBox.getItems().clear();
+        comboBox.setItems(obList);
 	}
 
-	@ActionMethod("Dirty")
-    public void onDirty() throws VetoException, FlowException {
-		if (cbDirty.isSelected()) {
-			cbClear.setSelected(false);
-			cbBurned.setSelected(false);
-		}
-
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		imageView.setImage(new Image(page.getImageUrl()));
+		question.setText(page.getQuestion());
+		createComboBox();
 	}
 }

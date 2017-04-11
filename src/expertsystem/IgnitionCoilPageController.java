@@ -1,12 +1,23 @@
 package expertsystem;
 
+import expertsystem.page.EnginePage;
+import expertsystem.page.IgnitionCoilPage;
 import io.datafx.controller.ViewController;
 import io.datafx.controller.flow.FlowException;
 import io.datafx.controller.flow.action.ActionMethod;
 import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.util.VetoException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * View controller for a view in the wizard. This class is only needed to define the binding between the class and the
@@ -15,22 +26,27 @@ import javafx.scene.control.CheckBox;
  * @see io.datafx.controller.ViewController
  */
 @ViewController("ignitionCoilPage.fxml")
-public class IgnitionCoilPageController {
+public class IgnitionCoilPageController implements Initializable{
 	@FXML
-	@ActionTrigger("Yes")
-    private CheckBox cbYes;
+	Label question;
+		
+	@FXML
+	ImageView imageView;
 	
 	@FXML
-	@ActionTrigger("No")
-    private CheckBox cbNo;
-	
-	@ActionMethod("Yes")
-    public void onYes() throws VetoException, FlowException {
-		if (cbYes.isSelected()) cbNo.setSelected(false);
+	ComboBox<String> comboBox;
+	IgnitionCoilPage page = new IgnitionCoilPage();
+
+	public void createComboBox() {
+        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
+        comboBox.getItems().clear();
+        comboBox.setItems(obList);
 	}
-	
-	@ActionMethod("No")
-    public void onNo() throws VetoException, FlowException {
-		if (cbNo.isSelected()) cbYes.setSelected(false);
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		imageView.setImage(new Image(page.getImageUrl()));
+		question.setText(page.getQuestion());
+		createComboBox();
 	}
 }
