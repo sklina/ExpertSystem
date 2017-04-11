@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ExpertSystem.jar" size="696022" download="eager" />
+    <jar href="ExpertSystem.jar" size="695809" download="eager" />
     <jar href="lib\CLIPSJNI.jar" size="11971" download="eager" />
     <jar href="lib\core-8.0.1.jar" size="57876" download="eager" />
     <jar href="lib\flow-8.0.1.jar" size="68975" download="eager" />

@@ -1,12 +1,17 @@
 package expertsystem;
 
+import expertsystem.page.IgnitionPage;
 import io.datafx.controller.ViewController;
-import io.datafx.controller.flow.FlowException;
-import io.datafx.controller.flow.action.ActionMethod;
-import io.datafx.controller.flow.action.ActionTrigger;
-import io.datafx.controller.util.VetoException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  * View controller for a view in the wizard. This class is only needed to define the binding between the class and the
@@ -15,42 +20,30 @@ import javafx.scene.control.CheckBox;
  * @see io.datafx.controller.ViewController
  */
 @ViewController("ignitionPage.fxml")
-public class IgnitionPageController {
+public class IgnitionPageController implements Initializable{
+
+	@FXML
+	Label question;
 	
 	@FXML
-	@ActionTrigger("IgnitionNorm")
-    private CheckBox cbIgnitionNorm;
+	ImageView imageView;
 	
 	@FXML
-	@ActionTrigger("SparkNotRegular")
-    private CheckBox cbSparkNotRegular;
+	ComboBox<String> cbIgnition;
 	
-	@FXML
-	@ActionTrigger("NoSpark")
-    private CheckBox cbNoSpark;
-	
-	@ActionMethod("IgnitionNorm")
-    public void onIgnitionNorm() throws VetoException, FlowException {
-		if (cbIgnitionNorm.isSelected()) {
-			cbSparkNotRegular.setSelected(false);
-			cbNoSpark.setSelected(false);
-		}
+	IgnitionPage page = new IgnitionPage();
+
+	public void createComboBox() {
+        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
+        cbIgnition.getItems().clear();
+        cbIgnition.setItems(obList);
 	}
-	
-	@ActionMethod("SparkNotRegular")
-    public void onSparkNotRegular() throws VetoException, FlowException {
-		if (cbSparkNotRegular.isSelected()) {
-			cbIgnitionNorm.setSelected(false);
-			cbNoSpark.setSelected(false);
-		}
-	}
-	
-	@ActionMethod("NoSpark")
-    public void onNoSpark() throws VetoException, FlowException {
-		if (cbNoSpark.isSelected()) {
-			cbIgnitionNorm.setSelected(false);
-			cbSparkNotRegular.setSelected(false);
-		}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		imageView.setImage(new Image(page.getImageUrl()));
+		question.setText(page.getQuestion());
+		createComboBox();
 	}
 	
 }

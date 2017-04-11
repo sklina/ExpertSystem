@@ -1,37 +1,48 @@
 package expertsystem;
 
+import expertsystem.page.BatteryChargePage;
 import io.datafx.controller.ViewController;
-import io.datafx.controller.flow.FlowException;
-import io.datafx.controller.flow.action.ActionMethod;
-import io.datafx.controller.flow.action.ActionTrigger;
-import io.datafx.controller.util.VetoException;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
- * View controller for a view in the wizard. This class is only needed to define the binding between the class and the
- * fxml file.
+ * View controller for a view in the wizard. This class is only needed to define
+ * the binding between the class and the fxml file.
+ *
  * @see WizardController
  * @see io.datafx.controller.ViewController
  */
 @ViewController("batteryChargePage.fxml")
-public class BatteryChargePageController {
+public class BatteryChargePageController implements Initializable {
+
+	@FXML
+	Label question;
+		
+	@FXML
+	ImageView imageView;
 	
 	@FXML
-	@ActionTrigger("Charged")
-    private CheckBox cbCharged;
-	
-	@FXML
-	@ActionTrigger("NotCharged")
-    private CheckBox cbNotCharged;
-	
-	@ActionMethod("Charged")
-    public void onCharged() throws VetoException, FlowException {
-		if (cbCharged.isSelected()) cbNotCharged.setSelected(false);
+	ComboBox<String> cbBatteryCharge;
+	BatteryChargePage page = new BatteryChargePage();
+
+	public void createComboBox() {
+        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
+        cbBatteryCharge.getItems().clear();
+        cbBatteryCharge.setItems(obList);
 	}
-	
-	@ActionMethod("NotCharged")
-    public void onNotCharged() throws VetoException, FlowException {
-		if (cbNotCharged.isSelected()) cbCharged.setSelected(false);
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		imageView.setImage(new Image(page.getImageUrl()));
+		question.setText(page.getQuestion());
+		createComboBox();
 	}
 }
