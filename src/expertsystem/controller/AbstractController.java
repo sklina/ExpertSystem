@@ -1,6 +1,7 @@
 
 package expertsystem.controller;
 
+import io.datafx.controller.flow.FlowHandler;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -14,8 +15,8 @@ import javafx.scene.image.ImageView;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public abstract class AbstractController implements Initializable{
-
-	@FXML
+ 
+ 	@FXML
 	Label questionLabel;
 		
 	@FXML
@@ -23,6 +24,8 @@ public abstract class AbstractController implements Initializable{
 	
 	@FXML
 	ComboBox<String> comboBox;
+	
+	public FlowHandler flowHandler;
 
 	abstract public void initComboBox();
 	

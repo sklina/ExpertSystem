@@ -27,6 +27,7 @@ public class PowerPageController extends AbstractController{
 		initQuestionLabel();
 		initComboBox();
 		initImageView();
+		System.out.println(page.getNextPageId());
 	}
 
 	@Override

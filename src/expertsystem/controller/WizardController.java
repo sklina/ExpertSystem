@@ -6,12 +6,13 @@ import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 import io.datafx.controller.flow.Flow;
 import io.datafx.controller.flow.FlowException;
-import io.datafx.controller.flow.FlowHandler;
 import io.datafx.controller.flow.action.ActionMethod;
 import io.datafx.controller.flow.action.ActionTrigger;
 import io.datafx.controller.flow.container.AnimatedFlowContainer;
 import io.datafx.controller.flow.container.ContainerAnimations;
 import io.datafx.controller.util.VetoException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.stage.Stage;
 
 import javax.annotation.PostConstruct;
@@ -22,7 +23,7 @@ import javax.annotation.PostConstruct;
  * is managed here.
  */
 @ViewController("/expertsystem/wizard.fxml")
-public class WizardController {
+public class WizardController extends AbstractController{
 
     @FXML
     @ActionTrigger("back")
@@ -36,9 +37,7 @@ public class WizardController {
 
     @FXML
     private StackPane centerPane;
-
-    private FlowHandler flowHandler;
-
+	
     @PostConstruct
     public void init() throws FlowException {
         Flow flow = new Flow(WelcomePageController.class).
@@ -57,9 +56,8 @@ public class WizardController {
 
         flowHandler = flow.createHandler();
         centerPane.getChildren().add(flowHandler.start(new AnimatedFlowContainer(Duration.millis(320), ContainerAnimations.SWIPE_LEFT)));
-
         backButton.setDisable(true);
-        finishButton.setDisable(true);
+        finishButton.setDisable(false);
 		
     }
 
@@ -89,6 +87,23 @@ public class WizardController {
     @ActionMethod("finish")
     public void onFinish() throws VetoException, FlowException {
 		Stage stage = (Stage)nextButton.getScene().getWindow();
-		stage.close();
+		flowHandler.navigateTo(PowerPageController.class);
+//		stage.close();
+	}
+
+	@Override
+	public void initComboBox() {
+	}
+
+	@Override
+	public void initImageView() {
+	}
+
+	@Override
+	public void initQuestionLabel() {
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
 	}
 }

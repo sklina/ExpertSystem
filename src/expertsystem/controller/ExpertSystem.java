@@ -1,6 +1,5 @@
 package expertsystem.controller;
 
-import expertsystem.controller.WizardController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
@@ -22,7 +21,6 @@ public class ExpertSystem  extends Application {
         Flow flow  = new Flow(WizardController.class);
 
         FlowHandler flowHandler = flow.createHandler();
-
         StackPane pane = flowHandler.start(new DefaultFlowContainer());
         primaryStage.setScene(new Scene(pane));
         primaryStage.show();

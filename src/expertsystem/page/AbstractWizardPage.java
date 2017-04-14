@@ -48,8 +48,8 @@ public abstract class AbstractWizardPage {
 		return buffer;
 	}
 	
-	abstract String getNextPageId();
-	abstract String getPreviousPageId();
-	abstract String getFinishPageId();
+	public abstract String getNextPageId();
+	public abstract String getPreviousPageId();
+	public abstract String getFinishPageId();
 
 }
