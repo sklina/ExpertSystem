@@ -8,7 +8,7 @@ import expertsystem.entity.Power;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class PowerPage extends WizardPage {
+public class PowerPage extends AbstractWizardPage {
 
 	public PowerPage() {
 		id = "PowerPage";

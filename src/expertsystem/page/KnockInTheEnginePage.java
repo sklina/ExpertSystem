@@ -8,7 +8,7 @@ import expertsystem.entity.KnockInTheEngine;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class KnockInTheEnginePage extends WizardPage {
+public class KnockInTheEnginePage extends AbstractWizardPage {
 
 	public KnockInTheEnginePage() {
 		id = "KnockInTheEnginePage";

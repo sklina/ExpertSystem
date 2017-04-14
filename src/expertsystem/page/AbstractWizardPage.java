@@ -8,7 +8,7 @@ import java.util.Map;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public abstract class WizardPage {
+public abstract class AbstractWizardPage {
 	public String id;
 	public String title;
 	public String question;

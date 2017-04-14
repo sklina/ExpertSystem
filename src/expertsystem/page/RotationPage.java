@@ -8,7 +8,7 @@ import expertsystem.entity.Rotation;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class RotationPage extends WizardPage {
+public class RotationPage extends AbstractWizardPage {
 
 	public RotationPage() {
 		id = "RotationPage";

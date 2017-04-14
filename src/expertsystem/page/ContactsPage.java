@@ -8,7 +8,7 @@ import expertsystem.entity.Entity;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class ContactsPage extends WizardPage{
+public class ContactsPage extends AbstractWizardPage{
 
 	public ContactsPage() {
 		id = "ContactsPage";

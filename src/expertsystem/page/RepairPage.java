@@ -8,7 +8,7 @@ import expertsystem.entity.Repair;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class RepairPage extends WizardPage {
+public class RepairPage extends AbstractWizardPage {
 
 	public RepairPage() {
 		id = "RepairPage";

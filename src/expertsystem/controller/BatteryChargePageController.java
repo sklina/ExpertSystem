@@ -6,37 +6,36 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 
 @ViewController(value = "/expertsystem/batteryChargePage.fxml")
-public class BatteryChargePageController implements Initializable {
+public class BatteryChargePageController extends AbstractController{
 
-	@FXML
-	Label question;
-		
-	@FXML
-	ImageView imageView;
-	
-	@FXML
-	ComboBox<String> cbBatteryCharge;
 	BatteryChargePage page = new BatteryChargePage();
 
-	public void createComboBox() {
+	@Override
+	public void initComboBox() {
         ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
-        cbBatteryCharge.getItems().clear();
-        cbBatteryCharge.setItems(obList);
+        comboBox.getItems().clear();
+        comboBox.setItems(obList);
+		comboBox.setPromptText("Выберите ответ");
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		initQuestionLabel();
+		initComboBox();
+		initImageView();
 	}
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initImageView() {
 		imageView.setImage(new Image(page.getImageUrl()));
-		question.setText(page.getQuestion());
-		createComboBox();
+	}
+
+	@Override
+	public void initQuestionLabel() {
+		questionLabel.setText(page.getQuestion());
 	}
 }
