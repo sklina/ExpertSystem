@@ -9,7 +9,7 @@ import expertsystem.entity.Entity;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class EngineWorkPage extends AbstractWizardPage {
+public class EngineWorkPage extends EntityPage {
 
 	public EngineWorkPage() {
 		id = "EngineWorkPage";

@@ -8,7 +8,7 @@ import expertsystem.entity.Ignition;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class IgnitionPage extends AbstractWizardPage {
+public class IgnitionPage extends EntityPage {
 
 	public IgnitionPage() {
 		id = "IgnitionPage";

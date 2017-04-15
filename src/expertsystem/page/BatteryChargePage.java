@@ -6,7 +6,7 @@ import expertsystem.entity.Entity;
 
 
 
-public class BatteryChargePage extends AbstractWizardPage{
+public class BatteryChargePage extends EntityPage{
 
 	public BatteryChargePage() {
 		id = "BatteryChargePage";

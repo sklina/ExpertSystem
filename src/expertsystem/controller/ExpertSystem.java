@@ -18,11 +18,28 @@ public class ExpertSystem  extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Flow flow  = new Flow(WizardController.class);
+//        Flow flow  = new Flow(WizardController.class);
+//
+//        FlowHandler flowHandler = flow.createHandler();
+//        StackPane pane = flowHandler.start(new DefaultFlowContainer());
+//        primaryStage.setScene(new Scene(pane));
+//        primaryStage.show();
+		new Flow(WelcomePageController.class).
+                withLink(WelcomePageController.class, "next", EnginePageController.class).
+                withLink(EnginePageController.class, "next", EngineWorkPageController.class).
+                withLink(EngineWorkPageController.class, "next", RotationPageController.class).
+				withLink(RotationPageController.class, "next", IgnitionPageController.class).
+				withLink(IgnitionPageController.class, "next", BatteryChargePageController.class).
+                withLink(BatteryChargePageController.class, "next", PowerPageController.class).
+                withLink(PowerPageController.class, "next", FuelPageController.class).
+				withLink(FuelPageController.class, "next", ContactsPageController.class).
+				withLink(ContactsPageController.class, "next", IgnitionCoilPageController.class).
+                withLink(IgnitionCoilPageController.class, "next", FuelSupplyPageController.class).
+                withLink(FuelSupplyPageController.class, "next", KnockInTheEnginePageController.class).
+				withLink(KnockInTheEnginePageController.class, "next", RepairPageController.class).
+				withGlobalBackAction("back").
+				withGlobalLink("finish", RepairPageController.class).
+				startInStage(primaryStage);
 
-        FlowHandler flowHandler = flow.createHandler();
-        StackPane pane = flowHandler.start(new DefaultFlowContainer());
-        primaryStage.setScene(new Scene(pane));
-        primaryStage.show();
     }
 }

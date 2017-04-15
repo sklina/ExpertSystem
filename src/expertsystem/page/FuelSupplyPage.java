@@ -8,7 +8,7 @@ import expertsystem.entity.FuelSupply;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class FuelSupplyPage extends AbstractWizardPage {
+public class FuelSupplyPage extends EntityPage {
 
 	public FuelSupplyPage() {
 		id = "FuelSupplyPage";
