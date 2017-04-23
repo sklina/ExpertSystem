@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Engine;
 import expertsystem.entity.Entity;
+import expertsystem.service.EngineService;
 
 /**
  *
@@ -10,11 +11,13 @@ import expertsystem.entity.Entity;
  */
 public class EnginePage extends EntityPage {
 
+	EngineService service = new EngineService();
+	
 	public EnginePage() {
-		id = "EnginePage";
-		title = "Состояние двигателя";
-		question = "Заводится ли двигатель? ";
-		imageUrl = "expertsystem/img/dvigatel.jpg";
+		setId("EnginePage");
+		setTitle("Состояние двигателя");
+		setQuestion("Заводится ли двигатель?");
+		setImageUrl("expertsystem/img/dvigatel.jpg");
 	}
 
 	@Override
@@ -22,9 +25,12 @@ public class EnginePage extends EntityPage {
 		return new Engine();
 	}
 
+	
+	
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//		service.addFacts(getEntity().getCurrentState());
+		return "ContactsPage";
 	}
 
 	@Override

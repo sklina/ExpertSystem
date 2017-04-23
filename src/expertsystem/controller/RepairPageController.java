@@ -11,11 +11,6 @@ import javax.annotation.PostConstruct;
 @ViewController("/expertsystem/recommendationToRepairPage.fxml")
 public class RepairPageController extends AbstractController{
 
-	@PostConstruct
-    public void initButtons() {
-        getNextButton().setDisable(true);
-        getFinishButton().setDisable(true);
-    }
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

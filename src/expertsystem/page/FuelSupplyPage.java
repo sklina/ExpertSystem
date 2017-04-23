@@ -11,10 +11,10 @@ import expertsystem.entity.FuelSupply;
 public class FuelSupplyPage extends EntityPage {
 
 	public FuelSupplyPage() {
-		id = "FuelSupplyPage";
-		title = "Подача топлива";
-		question = "Двигатель не сразу реагирует на подачу топлива?";
-		imageUrl = "expertsystem/img/benz.jpg";
+		setId("FuelSupplyPage");
+		setTitle("Подача топлива");
+		setQuestion("Двигатель не сразу реагирует на подачу топлива?");
+		setImageUrl("expertsystem/img/benz.jpg");
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class FuelSupplyPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "FuelPage";
 	}
 
 	@Override

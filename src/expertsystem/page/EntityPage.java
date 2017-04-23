@@ -9,10 +9,10 @@ import java.util.Map;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public abstract class EntityPage {
-	public String id;
-	public String title;
-	public String question;
-	public String imageUrl;
+	private String id;
+	private String title;
+	private String question;
+	private String imageUrl;
 	
 	private Entity entity;
 	Map<String, Entity> buffer;
@@ -42,6 +42,23 @@ public abstract class EntityPage {
 	public String getImageUrl() {
 		return imageUrl;
 	}
+
+	protected final void setId(String id) {
+		this.id = id;
+	}
+
+	protected final void setTitle(String title) {
+		this.title = title;
+	}
+
+	protected final void setQuestion(String question) {
+		this.question = question;
+	}
+
+	protected final void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	
 	
 	
 	public Map<String, Entity> getBuffer() {

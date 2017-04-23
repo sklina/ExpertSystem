@@ -9,6 +9,13 @@ import expertsystem.entity.Entity;
  */
 public class WelcomePage extends EntityPage {
 
+	public WelcomePage() {
+		setId("WelcomePage");
+		setTitle("AutoExpert. Приветствие");
+
+	}
+
+	
 	@Override
 	protected Entity createEntity() {
 		return null;
@@ -16,7 +23,7 @@ public class WelcomePage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "RotationPage";
 	}
 
 	@Override

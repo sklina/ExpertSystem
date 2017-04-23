@@ -12,10 +12,10 @@ import expertsystem.entity.Entity;
 public class EngineWorkPage extends EntityPage {
 
 	public EngineWorkPage() {
-		id = "EngineWorkPage";
-		title = "Рабочее состояние двигателя";
-		question = "Как работает двигатель?";
-		imageUrl = "expertsystem/img/dvigatRabSost.jpg";
+		setId("EngineWorkPage");
+		setTitle("Рабочее состояние двигателя");
+		setQuestion("Как работает двигатель?");
+		setImageUrl("expertsystem/img/dvigatRabSost.jpg");
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class EngineWorkPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "EnginePage";
 	}
 
 	@Override

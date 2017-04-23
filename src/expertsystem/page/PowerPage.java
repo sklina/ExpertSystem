@@ -11,10 +11,10 @@ import expertsystem.entity.Power;
 public class PowerPage extends EntityPage {
 
 	public PowerPage() {
-		id = "PowerPage";
-		title = "Мощность";
-		question = "Какая мощность у двигателя?";
-		imageUrl = "expertsystem/img/power3.jpg";
+		setId("PowerPage");
+		setTitle("Мощность");
+		setQuestion("Какая мощность у двигателя?");
+		setImageUrl("expertsystem/img/power3.jpg");
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class PowerPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "FuelSupplyPage";
+		return "KnockInTheEnginePage";
 	}
 
 	@Override

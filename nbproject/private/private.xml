@@ -3,13 +3,40 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/AbstractWizardPage.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/BatteryChargePage.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/IgnitionPageController.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/IgnitionCoilPageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/ExpertSystem.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/EnginePageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/ignitionPage.fxml</file>
             <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/entity/BatteryCharge.java</file>
             <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/AbstractController.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/BatteryChargePageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/ContactsPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/WelcomePage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/EntityPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/WizardController1.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/fuelPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/EnginePage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/ignitionCoilPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/EngineWorkPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/contactsPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/batteryChargePage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/enginePage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/PowerPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/fuelSupply1Page.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/FuelSupplyPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/actionBar.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/RepairPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/recommendationToRepairPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/FuelPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/IgnitionCoilPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/WelcomePageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/engineWorkPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/welcomePage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/KnockInTheEnginePage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/rotationPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/knockInTheEnginePage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/IgnitionPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/BatteryChargePage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/IgnitionCoilPageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/RotationPage.java</file>
         </group>
     </open-files>
 </project-private>

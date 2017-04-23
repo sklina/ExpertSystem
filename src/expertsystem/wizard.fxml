@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.StackPane?>
 
 <BorderPane prefHeight="240.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" >
-    <bottom>
+<!--    <bottom>
         <fx:include source="actionBar.fxml" />
-    </bottom>
+    </bottom>-->
     <center>
         <StackPane fx:id="centerPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
         </StackPane>

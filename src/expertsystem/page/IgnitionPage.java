@@ -11,10 +11,10 @@ import expertsystem.entity.Ignition;
 public class IgnitionPage extends EntityPage {
 
 	public IgnitionPage() {
-		id = "IgnitionPage";
-		title = "Система зажигания";
-		question = "Нет ли перебоев в системе зажигания?";
-		imageUrl = "expertsystem/img/zazhiganie2.jpg";
+		setId("IgnitionPage");
+		setTitle("Система зажигания");
+		setQuestion("Нет ли перебоев в системе зажигания?");
+		setImageUrl("expertsystem/img/zazhiganie2.jpg");
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class IgnitionPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "IgnitionCoilPage";
 	}
 
 	@Override

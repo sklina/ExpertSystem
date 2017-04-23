@@ -11,10 +11,10 @@ import expertsystem.entity.Rotation;
 public class RotationPage extends EntityPage {
 
 	public RotationPage() {
-		id = "RotationPage";
-		title = "Вращение двигателя";
-		question = "Вращается ли двигатель?";
-		imageUrl = "expertsystem/img/DvigVraw.jpg";
+		setId("RotationPage");
+		setTitle("Вращение двигателя");
+		setQuestion("Вращается ли двигатель?");
+		setImageUrl("expertsystem/img/DvigVraw.jpg");
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class RotationPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "PowerPage";
 	}
 
 	@Override

@@ -9,22 +9,20 @@ import expertsystem.entity.Entity;
 public class BatteryChargePage extends EntityPage{
 
 	public BatteryChargePage() {
-		id = "BatteryChargePage";
-		title = "Заряд аккумулятора";
-		question = "Заряжен ли аккумулятор?";
-		imageUrl = "expertsystem/img/akkum.jpg";
+		setId("BatteryChargePage");
+		setTitle("Заряд аккумулятора");
+		setQuestion("Заряжен ли аккумулятор?");
+		setImageUrl("expertsystem/img/akkum.jpg");
 	}
-	
 
 	@Override
 	protected Entity createEntity() {
-		
 		return new BatteryCharge();
 	}
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "RepairPage";
 	}
 
 	@Override

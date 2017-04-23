@@ -11,10 +11,10 @@ import expertsystem.entity.Entity;
 public class ContactsPage extends EntityPage{
 
 	public ContactsPage() {
-		id = "ContactsPage";
-		title = "Контакты";
-		question = "Какое состояние поверхности контактов?";
-		imageUrl = "expertsystem/img/contact.jpg";
+		setId("ContactsPage");
+		setTitle("Контакты");
+		setQuestion("Какое состояние поверхности контактов?");
+		setImageUrl("expertsystem/img/contact.jpg");
 	}
 
 	
@@ -25,7 +25,7 @@ public class ContactsPage extends EntityPage{
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "BatteryChargePage";
 	}
 
 	@Override

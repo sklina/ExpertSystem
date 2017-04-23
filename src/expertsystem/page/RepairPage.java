@@ -11,10 +11,10 @@ import expertsystem.entity.Repair;
 public class RepairPage extends EntityPage {
 
 	public RepairPage() {
-		id = "RepairPage";
-		title = "Рекомендация";
-		question = "";
-		imageUrl = "expertsystem/img/remont2.jpg";
+		setId("RepairPage");
+		setTitle("Рекомендация");
+		setQuestion("");
+		setImageUrl("expertsystem/img/remont2.jpg");
 	}
 
 	@Override

@@ -11,10 +11,10 @@ import expertsystem.entity.Fuel;
 public class FuelPage extends EntityPage {
 
 	public FuelPage() {
-		id = "FuelPage";
-		title = "Топливо";
-		question = "Есть ли в баке бензин?";
-		imageUrl = "expertsystem/img/benz1.jpg";
+		setId("FuelPage");
+		setTitle("Топливо");
+		setQuestion("Есть ли в баке бензин?");
+		setImageUrl("expertsystem/img/benz1.jpg");
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class FuelPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "EngineWorkPage";
 	}
 
 	@Override

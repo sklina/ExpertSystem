@@ -11,10 +11,10 @@ import expertsystem.entity.KnockInTheEngine;
 public class KnockInTheEnginePage extends EntityPage {
 
 	public KnockInTheEnginePage() {
-		id = "KnockInTheEnginePage";
-		title = "Стук в двигателе";
-		question = "Стучит ли двигатель?";
-		imageUrl = "expertsystem/img/DvigStuk.jpg";
+		setId("KnockInTheEnginePage");
+		setTitle("Стук в двигателе");
+		setQuestion("Стучит ли двигатель?");
+		setImageUrl("expertsystem/img/DvigStuk.jpg");
 	}
 
 	@Override
@@ -24,7 +24,7 @@ public class KnockInTheEnginePage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return "IgnitionPage";
 	}
 
 	@Override

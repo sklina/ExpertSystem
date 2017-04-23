@@ -15,6 +15,7 @@ public class FuelSupplyPageController extends AbstractController{
 		initQuestionLabel();
 		initComboBox();
 		initImageView();
+		System.out.println(getEntityPage().getNextPageId());
 	}
 
 	@Override
