@@ -3,18 +3,21 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.IgnitionCoil;
+import expertsystem.service.IgnitionCoilService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class IgnitionCoilPage extends WizardPage {
+public class IgnitionCoilPage extends EntityPage {
 
+	IgnitionCoilService service = new IgnitionCoilService();
+	
 	public IgnitionCoilPage() {
-		id = "IgnitionCoilPage";
-		title = "Катушка зажигания";
-		question = "Катушка зажигания проводит ток? ";
-		imageUrl = "expertsystem/img/katushka.jpg";
+		setId("IgnitionCoilPage");
+		setTitle("Катушка зажигания");
+		setQuestion("Катушка зажигания проводит ток?");
+		setImageUrl("expertsystem/img/katushka.jpg");
 	}
 
 	@Override
@@ -23,17 +26,17 @@ public class IgnitionCoilPage extends WizardPage {
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 

@@ -1,47 +1,31 @@
 package expertsystem.controller;
 
-import expertsystem.page.EnginePage;
 import expertsystem.page.EngineWorkPage;
+import expertsystem.page.EntityPage;
 import io.datafx.controller.ViewController;
-import io.datafx.controller.flow.FlowException;
-import io.datafx.controller.flow.action.ActionMethod;
-import io.datafx.controller.flow.action.ActionTrigger;
-import io.datafx.controller.util.VetoException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
+import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/engineWorkPage.fxml")
-public class EngineWorkPageController implements Initializable{
-	@FXML
-	Label question;
-		
-	@FXML
-	ImageView imageView;
-	
-	@FXML
-	ComboBox<String> comboBox;
-	EngineWorkPage page = new EngineWorkPage();
+public class EngineWorkPageController extends AbstractController {
 
-	public void createComboBox() {
-        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
-        comboBox.getItems().clear();
-        comboBox.setItems(obList);
+	@PostConstruct
+	public void initButtons() {
+		getNextButton().setDisable(true);
+		getFinishButton().setDisable(true);
+		getBackButton().setDisable(true);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		imageView.setImage(new Image(page.getImageUrl()));
-		question.setText(page.getQuestion());
-		createComboBox();
+		initQuestionLabel();
+		initComboBox();
+		initImageView();
+	}
+
+	@Override
+	protected EntityPage createEntityPage() {
+		return new EngineWorkPage();
 	}
 }

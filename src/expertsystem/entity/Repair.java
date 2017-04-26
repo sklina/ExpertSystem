@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  */
 public class Repair extends Entity {
 	enum State {
-		Charge("Да"), NotCharge("Нет");
+		Charge("Отвезите к механику"), NotCharge("Залейте бензин");
 		
 		private String value;
 		

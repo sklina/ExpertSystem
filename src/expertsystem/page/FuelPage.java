@@ -3,18 +3,21 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Fuel;
+import expertsystem.service.FuelService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class FuelPage extends WizardPage {
+public class FuelPage extends EntityPage {
 
+	FuelService service = new FuelService();
+	
 	public FuelPage() {
-		id = "FuelPage";
-		title = "Топливо";
-		question = "Есть ли в баке бензин?";
-		imageUrl = "expertsystem/img/benz1.jpg";
+		setId("FuelPage");
+		setTitle("Топливо");
+		setQuestion("Есть ли в баке бензин?");
+		setImageUrl("expertsystem/img/benz1.jpg");
 	}
 
 	@Override
@@ -23,17 +26,17 @@ public class FuelPage extends WizardPage {
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 	

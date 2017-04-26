@@ -3,19 +3,24 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Repair;
+import expertsystem.service.RepairService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class RepairPage extends WizardPage {
+public class RepairPage extends EntityPage {
 
+	RepairService service = new RepairService();
+	
 	public RepairPage() {
-		id = "RepairPage";
-		title = "Рекомендация";
-		question = "";
-		imageUrl = "expertsystem/img/remont2.jpg";
+		setId("RepairPage");
+		setTitle("Рекомендация");
+		setQuestion("");
+		setImageUrl("expertsystem/img/remont2.jpg");
 	}
+	
+	
 
 	@Override
 	protected Entity createEntity() {
@@ -23,17 +28,17 @@ public class RepairPage extends WizardPage {
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 

@@ -1,41 +1,34 @@
 package expertsystem.controller;
 
 import expertsystem.page.EnginePage;
+import expertsystem.page.EntityPage;
 import io.datafx.controller.ViewController;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/enginePage.fxml")
-public class EnginePageController implements Initializable{
-	@FXML
-	Label question;
-		
-	@FXML
-	ImageView imageView;
-	
-	@FXML
-	ComboBox<String> comboBox;
-	EnginePage page = new EnginePage();
+public class EnginePageController extends AbstractController {
 
-	public void createComboBox() {
-        ObservableList obList = FXCollections.observableList(page.getEntity().getStates());
-        comboBox.getItems().clear();
-        comboBox.setItems(obList);
+	@PostConstruct
+	public void initButtons() {
+		getNextButton().setDisable(true);
+		getFinishButton().setDisable(true);
+		getBackButton().setDisable(true);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		imageView.setImage(new Image(page.getImageUrl()));
-		question.setText(page.getQuestion());
-		createComboBox();
+		initQuestionLabel();
+		initComboBox();
+		initImageView();
+
+	}
+
+	@Override
+	protected EntityPage createEntityPage() {
+		return new EnginePage();
 	}
 }

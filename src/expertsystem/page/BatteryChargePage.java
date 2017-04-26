@@ -3,37 +3,38 @@ package expertsystem.page;
 
 import expertsystem.entity.BatteryCharge;
 import expertsystem.entity.Entity;
+import expertsystem.service.BatteryChargeService;
 
 
 
-public class BatteryChargePage extends WizardPage{
+public class BatteryChargePage extends EntityPage{
 
-	public BatteryChargePage() {
-		id = "BatteryChargePage";
-		title = "Заряд аккумулятора";
-		question = "Заряжен ли аккумулятор?";
-		imageUrl = "expertsystem/img/akkum.jpg";
-	}
+	BatteryChargeService service = new BatteryChargeService();
 	
+	public BatteryChargePage() {
+		setId("BatteryChargePage");
+		setTitle("Заряд аккумулятора");
+		setQuestion("Заряжен ли аккумулятор?");
+		setImageUrl("expertsystem/img/akkum.jpg");
+	}
 
 	@Override
 	protected Entity createEntity() {
-		
 		return new BatteryCharge();
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 

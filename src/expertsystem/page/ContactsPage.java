@@ -3,18 +3,21 @@ package expertsystem.page;
 
 import expertsystem.entity.Contacts;
 import expertsystem.entity.Entity;
+import expertsystem.service.ContactsService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class ContactsPage extends WizardPage{
+public class ContactsPage extends EntityPage{
 
+	ContactsService service = new ContactsService();
+	
 	public ContactsPage() {
-		id = "ContactsPage";
-		title = "Контакты";
-		question = "Какое состояние поверхности контактов?";
-		imageUrl = "expertsystem/img/contact.jpg";
+		setId("ContactsPage");
+		setTitle("Контакты");
+		setQuestion("Какое состояние поверхности контактов?");
+		setImageUrl("expertsystem/img/contact.jpg");
 	}
 
 	
@@ -24,17 +27,17 @@ public class ContactsPage extends WizardPage{
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 

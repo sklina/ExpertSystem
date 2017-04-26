@@ -3,18 +3,21 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Power;
+import expertsystem.service.PowerService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class PowerPage extends WizardPage {
+public class PowerPage extends EntityPage {
 
+	PowerService service = new PowerService();
+	
 	public PowerPage() {
-		id = "PowerPage";
-		title = "Мощность";
-		question = "Какая мощность у двигателя?";
-		imageUrl = "expertsystem/img/power3.jpg";
+		setId("PowerPage");
+		setTitle("Мощность");
+		setQuestion("Какая мощность у двигателя?");
+		setImageUrl("expertsystem/img/power3.jpg");
 	}
 
 	@Override
@@ -23,17 +26,17 @@ public class PowerPage extends WizardPage {
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 

@@ -1,27 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" >
-   <children>
-      <Label layoutX="31.0" prefHeight="61.0" prefWidth="438.0" text="Результат диагностики">
+<BorderPane prefHeight="240.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+  <bottom>
+    <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#onMouseMoved" prefHeight="-1.0" prefWidth="-1.0" spacing="12.0" style="-fx-background-color: darkgray;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+      <children>
+        <Button fx:id="backButton" mnemonicParsing="false" text="Назад" />
+        <Button fx:id="nextButton" mnemonicParsing="false" text="Далее" />
+        <Button fx:id="finishButton" mnemonicParsing="false" text="Готово" />
+      </children>
+      <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+      </padding>
+    </HBox>
+  </bottom>
+  <center>
+    <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+      <Label layoutX="31.0" prefHeight="61.0" prefWidth="438.0" text="Результат диагностики" StackPane.alignment="TOP_CENTER">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <ImageView fitHeight="174.0" fitWidth="167.0" layoutX="319.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="174.0" fitWidth="167.0" layoutX="319.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
          <image>
             <Image url="@img/remont2.jpg" />
          </image>
       </ImageView>
-      <TabPane layoutX="31.0" layoutY="52.0" prefHeight="161.0" prefWidth="294.0" stylesheets="@tabStyle.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="31.0" layoutY="52.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="161.0" prefWidth="294.0" stylesheets="@tabStyle.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Рекомендация">
             <content>
@@ -38,6 +55,10 @@
             </content>
           </Tab>
         </tabs>
+            <StackPane.margin>
+               <Insets left="20.0" top="50.0" />
+            </StackPane.margin>
       </TabPane>
-   </children>
-</Pane>
+    </StackPane>
+  </center>
+</BorderPane>

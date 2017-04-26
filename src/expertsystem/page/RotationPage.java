@@ -3,18 +3,21 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Rotation;
+import expertsystem.service.RotationService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class RotationPage extends WizardPage {
+public class RotationPage extends EntityPage {
 
+	RotationService service = new RotationService();
+	
 	public RotationPage() {
-		id = "RotationPage";
-		title = "Вращение двигателя";
-		question = "Вращается ли двигатель?";
-		imageUrl = "expertsystem/img/DvigVraw.jpg";
+		setId("RotationPage");
+		setTitle("Вращение двигателя");
+		setQuestion("Вращается ли двигатель?");
+		setImageUrl("expertsystem/img/DvigVraw.jpg");
 	}
 
 	@Override
@@ -23,17 +26,17 @@ public class RotationPage extends WizardPage {
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 

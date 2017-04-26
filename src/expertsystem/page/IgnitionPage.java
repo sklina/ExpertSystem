@@ -3,18 +3,21 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Ignition;
+import expertsystem.service.IgnitionService;
 
 /**
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class IgnitionPage extends WizardPage {
+public class IgnitionPage extends EntityPage {
 
+	IgnitionService service = new IgnitionService();
+	
 	public IgnitionPage() {
-		id = "IgnitionPage";
-		title = "Система зажигания";
-		question = "Нет ли перебоев в системе зажигания?";
-		imageUrl = "expertsystem/img/zazhiganie2.jpg";
+		setId("IgnitionPage");
+		setTitle("Система зажигания");
+		setQuestion("Нет ли перебоев в системе зажигания?");
+		setImageUrl("expertsystem/img/zazhiganie2.jpg");
 	}
 
 	@Override
@@ -23,17 +26,17 @@ public class IgnitionPage extends WizardPage {
 	}
 
 	@Override
-	String getNextPageId() {
+	public String getNextPageId() {
+		return service.addFacts(getEntity().getCurrentState());
+	}
+
+	@Override
+	public String getPreviousPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
 	@Override
-	String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
-
-	@Override
-	String getFinishPageId() {
+	public String getFinishPageId() {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
