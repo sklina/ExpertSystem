@@ -5,11 +5,18 @@ import expertsystem.page.FuelPage;
 import io.datafx.controller.ViewController;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/fuelPage.fxml")
-public class FuelPageController extends AbstractController{
-	
+public class FuelPageController extends AbstractController {
+
+	@PostConstruct
+	public void initButtons() {
+		getNextButton().setDisable(true);
+		getFinishButton().setDisable(true);
+		getBackButton().setDisable(true);
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		initQuestionLabel();
@@ -19,5 +26,6 @@ public class FuelPageController extends AbstractController{
 
 	@Override
 	protected EntityPage createEntityPage() {
-		return new FuelPage();}
+		return new FuelPage();
+	}
 }

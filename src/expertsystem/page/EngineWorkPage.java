@@ -4,6 +4,7 @@ package expertsystem.page;
 import expertsystem.entity.Engine;
 import expertsystem.entity.EngineWork;
 import expertsystem.entity.Entity;
+import expertsystem.service.EngineWorkService;
 
 /**
  *
@@ -11,6 +12,8 @@ import expertsystem.entity.Entity;
  */
 public class EngineWorkPage extends EntityPage {
 
+	EngineWorkService service = new EngineWorkService();
+	
 	public EngineWorkPage() {
 		setId("EngineWorkPage");
 		setTitle("Рабочее состояние двигателя");
@@ -25,7 +28,7 @@ public class EngineWorkPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "EnginePage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

@@ -2,21 +2,24 @@
 package expertsystem.service;
 
 /**
- *
+ * Состояние
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class EngineService extends AbstractService{
 
 	@Override
 	public String addFacts(String currentState) {
-		if (currentState.equals("Да"))
-			clips.eval("(assert (working-state engine normal) )");
-		else if (currentState.equals("Нет"))
-			clips.eval("(assert (symptom engine low-output))");
-		clips.run();
-		String buf = clips.getInputBuffer();
-		System.out.println(buf);
-		return "EngineWorkPage";
+		
+		if (currentState.equals("Да")) {
+			setEngineStart(true);
+			return "EngineWorkPage";
+		} else if (currentState.equals("Нет")) {
+			setEngineStart(false);
+			getEnviroment().eval("(assert (working-state engine does-not-start)) ");
+			return "RotationPage";
+		}
+
+		return null;
 	}
 	
 }

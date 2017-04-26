@@ -29,8 +29,7 @@ public class EnginePage extends EntityPage {
 	
 	@Override
 	public String getNextPageId() {
-//		service.addFacts(getEntity().getCurrentState());
-		return "ContactsPage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

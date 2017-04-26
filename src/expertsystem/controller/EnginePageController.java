@@ -9,17 +9,22 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javax.annotation.PostConstruct;
 
-
 @ViewController("/expertsystem/enginePage.fxml")
 public class EnginePageController extends AbstractController {
 
-	
+	@PostConstruct
+	public void initButtons() {
+		getNextButton().setDisable(true);
+		getFinishButton().setDisable(true);
+		getBackButton().setDisable(true);
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		initQuestionLabel();
 		initComboBox();
 		initImageView();
-		
+
 	}
 
 	@Override

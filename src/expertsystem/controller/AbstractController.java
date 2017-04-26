@@ -68,20 +68,17 @@ public abstract class AbstractController implements Initializable {
 	@FXML
 	private void onComboBox() throws VetoException, FlowException {
 		if (comboBox.getSelectionModel().getSelectedItem() != null) {
-			backButton.setDisable(false);
 			getEntityPage().getEntity().setCurrentState(comboBox.getSelectionModel().getSelectedItem());
-			entityPage.getNextPageId();
+			getEntityPage().getNextPageId();
 		}
+		System.out.println("Установлено состояние \"" + getEntityPage().getEntity().getCurrentState()
+				+ "\" для сущности " + getEntityPage().getEntity().getClass().getSimpleName());
+		getNextButton().setDisable(false);
 	}
 	@FXML
 	@ActionMethod("back")
 	public void onBack() throws VetoException, FlowException {
 		flowHandler.navigateBack();
-		if (flowHandler.getCurrentViewControllerClass().equals(WelcomePageController.class)) {
-			getBackButton().setDisable(true);
-		} else {
-			getBackButton().setDisable(false);
-		}
 	}
 
 	@FXML
@@ -89,25 +86,20 @@ public abstract class AbstractController implements Initializable {
 	public void onNext() throws VetoException, FlowException, ClassNotFoundException {
 		String className = "expertsystem.controller." + getEntityPage().getNextPageId() + "Controller";
 		flowHandler.navigateTo(Class.forName(className));
-		getNextButton().setDisable(true);
-		if (flowHandler.getCurrentViewControllerClass().equals(RepairPageController.class)) {
-			getBackButton().setDisable(true);
-			getNextButton().setDisable(true);
-			getFinishButton().setDisable(false);
-		} else {
-			getBackButton().setDisable(false);
-		}
-
 	}
 
 	@FXML
 	@ActionMethod("finish")
 	public void onFinish() throws VetoException, FlowException {
 		Stage stage = (Stage) getNextButton().getScene().getWindow();
-		flowHandler.navigateTo(RepairPageController.class);
-		getBackButton().setDisable(true);
-		getNextButton().setDisable(true);
-//		stage.close();
+		stage.close();
+	}
+	
+	@FXML
+	public void onMouseMoved() {
+		Stage stage = (Stage) getNextButton().getScene().getWindow();
+		if (!getEntityPage().getTitle().equals(stage.getTitle()))
+			stage.setTitle(getEntityPage().getTitle());
 	}
 
 	/** Инициализация элементов окна. */
@@ -130,5 +122,4 @@ public abstract class AbstractController implements Initializable {
 		@Override
 	public abstract void initialize(URL location, ResourceBundle resources);
 
-	
 }

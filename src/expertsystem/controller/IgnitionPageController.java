@@ -5,10 +5,17 @@ import expertsystem.page.IgnitionPage;
 import io.datafx.controller.ViewController;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/ignitionPage.fxml")
-public class IgnitionPageController extends AbstractController{
+public class IgnitionPageController extends AbstractController {
+
+	@PostConstruct
+	public void initButtons() {
+		getNextButton().setDisable(true);
+		getFinishButton().setDisable(true);
+		getBackButton().setDisable(true);
+	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

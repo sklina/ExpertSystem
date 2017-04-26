@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Contacts;
 import expertsystem.entity.Entity;
+import expertsystem.service.ContactsService;
 
 /**
  *
@@ -10,6 +11,8 @@ import expertsystem.entity.Entity;
  */
 public class ContactsPage extends EntityPage{
 
+	ContactsService service = new ContactsService();
+	
 	public ContactsPage() {
 		setId("ContactsPage");
 		setTitle("Контакты");
@@ -25,7 +28,7 @@ public class ContactsPage extends EntityPage{
 
 	@Override
 	public String getNextPageId() {
-		return "BatteryChargePage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

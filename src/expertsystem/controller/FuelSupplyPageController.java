@@ -5,20 +5,27 @@ import expertsystem.page.FuelSupplyPage;
 import io.datafx.controller.ViewController;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/fuelSupply1Page.fxml")
-public class FuelSupplyPageController extends AbstractController{
-	
+public class FuelSupplyPageController extends AbstractController {
+
+	@PostConstruct
+	public void initButtons() {
+		getNextButton().setDisable(true);
+		getFinishButton().setDisable(true);
+		getBackButton().setDisable(true);
+	}
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		initQuestionLabel();
 		initComboBox();
 		initImageView();
-		System.out.println(getEntityPage().getNextPageId());
 	}
 
 	@Override
 	protected EntityPage createEntityPage() {
-		return new FuelSupplyPage();}
+		return new FuelSupplyPage();
+	}
 }

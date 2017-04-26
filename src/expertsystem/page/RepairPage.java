@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Repair;
+import expertsystem.service.RepairService;
 
 /**
  *
@@ -10,12 +11,16 @@ import expertsystem.entity.Repair;
  */
 public class RepairPage extends EntityPage {
 
+	RepairService service = new RepairService();
+	
 	public RepairPage() {
 		setId("RepairPage");
 		setTitle("Рекомендация");
 		setQuestion("");
 		setImageUrl("expertsystem/img/remont2.jpg");
 	}
+	
+	
 
 	@Override
 	protected Entity createEntity() {
@@ -24,7 +29,7 @@ public class RepairPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

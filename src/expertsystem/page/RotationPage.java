@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Rotation;
+import expertsystem.service.RotationService;
 
 /**
  *
@@ -10,6 +11,8 @@ import expertsystem.entity.Rotation;
  */
 public class RotationPage extends EntityPage {
 
+	RotationService service = new RotationService();
+	
 	public RotationPage() {
 		setId("RotationPage");
 		setTitle("Вращение двигателя");
@@ -24,7 +27,7 @@ public class RotationPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "PowerPage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

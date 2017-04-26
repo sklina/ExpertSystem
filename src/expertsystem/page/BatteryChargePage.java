@@ -3,11 +3,14 @@ package expertsystem.page;
 
 import expertsystem.entity.BatteryCharge;
 import expertsystem.entity.Entity;
+import expertsystem.service.BatteryChargeService;
 
 
 
 public class BatteryChargePage extends EntityPage{
 
+	BatteryChargeService service = new BatteryChargeService();
+	
 	public BatteryChargePage() {
 		setId("BatteryChargePage");
 		setTitle("Заряд аккумулятора");
@@ -22,7 +25,7 @@ public class BatteryChargePage extends EntityPage{
 
 	@Override
 	public String getNextPageId() {
-		return "RepairPage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

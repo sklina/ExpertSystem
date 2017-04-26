@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Power;
+import expertsystem.service.PowerService;
 
 /**
  *
@@ -10,6 +11,8 @@ import expertsystem.entity.Power;
  */
 public class PowerPage extends EntityPage {
 
+	PowerService service = new PowerService();
+	
 	public PowerPage() {
 		setId("PowerPage");
 		setTitle("Мощность");
@@ -24,7 +27,7 @@ public class PowerPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "KnockInTheEnginePage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

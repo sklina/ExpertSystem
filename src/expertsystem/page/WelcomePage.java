@@ -23,7 +23,7 @@ public class WelcomePage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "RotationPage";
+		return "EnginePage";
 	}
 
 	@Override

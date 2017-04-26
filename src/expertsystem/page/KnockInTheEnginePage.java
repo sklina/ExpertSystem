@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.KnockInTheEngine;
+import expertsystem.service.KnockInTheEngineService;
 
 /**
  *
@@ -10,6 +11,8 @@ import expertsystem.entity.KnockInTheEngine;
  */
 public class KnockInTheEnginePage extends EntityPage {
 
+	KnockInTheEngineService service = new KnockInTheEngineService();
+	
 	public KnockInTheEnginePage() {
 		setId("KnockInTheEnginePage");
 		setTitle("Стук в двигателе");
@@ -24,7 +27,7 @@ public class KnockInTheEnginePage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "IgnitionPage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

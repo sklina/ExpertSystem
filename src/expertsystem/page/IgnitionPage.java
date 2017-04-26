@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Ignition;
+import expertsystem.service.IgnitionService;
 
 /**
  *
@@ -10,6 +11,8 @@ import expertsystem.entity.Ignition;
  */
 public class IgnitionPage extends EntityPage {
 
+	IgnitionService service = new IgnitionService();
+	
 	public IgnitionPage() {
 		setId("IgnitionPage");
 		setTitle("Система зажигания");
@@ -24,7 +27,7 @@ public class IgnitionPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "IgnitionCoilPage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override

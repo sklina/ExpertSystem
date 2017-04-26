@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.FuelSupply;
+import expertsystem.service.FuelSupplyService;
 
 /**
  *
@@ -10,6 +11,8 @@ import expertsystem.entity.FuelSupply;
  */
 public class FuelSupplyPage extends EntityPage {
 
+	FuelSupplyService service = new FuelSupplyService();
+	
 	public FuelSupplyPage() {
 		setId("FuelSupplyPage");
 		setTitle("Подача топлива");
@@ -24,7 +27,7 @@ public class FuelSupplyPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return "FuelPage";
+		return service.addFacts(getEntity().getCurrentState());
 	}
 
 	@Override
