@@ -25,16 +25,20 @@ public abstract class AbstractService {
 
 	public AbstractService() {
 		if (enviroment == null) {
-			enviroment = new Environment();
-			enviroment.load(PATH);
-			enviroment.build("(deftemplate engine (slot state))");
-//		enviroment.eval("(deffacts engine (state none))");
-			enviroment.reset();
+			createEnviroment();
 		}
 		
 
 //		enviroment.assertString("");
 //		enviroment.eval("(deftemplate engine (slot state (type SYMBOL)(default none)))");
+	}
+	
+	private void createEnviroment() {
+		enviroment = new Environment();
+		enviroment.load(PATH);
+		enviroment.build("(deftemplate engine (slot state))");
+		enviroment.build("(deftemplate recom (slot value(type STRING)))");
+		enviroment.reset();
 	}
 
 	public static Map<String, String> getDetailsMap() {

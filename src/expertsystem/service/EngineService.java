@@ -6,6 +6,10 @@ import static expertsystem.entity.Engine.State.YES;
 import static expertsystem.entity.Engine.State.NO;
 import expertsystem.page.EngineWorkPage;
 import expertsystem.page.RotationPage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.clipsrules.jni.FactAddressValue;
+import net.sf.clipsrules.jni.MultifieldValue;
 
 /**
  * Состояние
@@ -17,7 +21,7 @@ public class EngineService extends AbstractService {
 	@Override
 	public String getNextPageId(EntityPage page) {
 		String currentState = page.getEntity().getCurrentState();
-		String fact;
+		String fact;		
 		if (currentState.equals(YES.getValue())) {
 			setEngineStart(true);
 			

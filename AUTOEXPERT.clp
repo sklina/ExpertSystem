@@ -1,5 +1,9 @@
 ﻿;(deftemplate engine (slot state))
 
+;(deftemplate recom (slot value))
+
+;(assert (recom (value start)))
+
 (deffunction ask-question (?question $?allowed-values)
 (printout t ?question)
 (bind ?answer (read))

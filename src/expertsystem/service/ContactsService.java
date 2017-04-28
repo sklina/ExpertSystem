@@ -13,6 +13,10 @@ import expertsystem.page.EntityPage;
 import expertsystem.page.FuelPage;
 import expertsystem.page.FuelSupplyPage;
 import expertsystem.page.RepairPage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import net.sf.clipsrules.jni.FactAddressValue;
+import net.sf.clipsrules.jni.MultifieldValue;
 
 /**
  * состояние
@@ -25,10 +29,21 @@ public class ContactsService extends AbstractService {
 	public String getNextPageId(EntityPage page) {
 		String currentState = page.getEntity().getCurrentState();
 		String fact;
+		
+		MultifieldValue mv = (MultifieldValue) getEnviroment().eval("(find-fact ((?f engine)) TRUE)");
+		FactAddressValue factEngine = (FactAddressValue) mv.multifieldValue().get(0);
+		String engineState = "";
+		try {
+			engineState = factEngine.getFactSlot("state").toString();
+			System.out.println("Engine state is " + engineState);
+		} catch (Exception ex) {
+			Logger.getLogger(EngineService.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
 		//если двигатель заводится
-		if (isEngineStart() && currentState.equals(CLEAR.getValue())) {
+		if (engineState.equals("start") && currentState.equals(CLEAR.getValue())) {
 			return FuelSupplyPage.ID;
-		} else if (!isEngineStart() && currentState.equals(CLEAR.getValue())) {
+		} else if (engineState.equals("does-not-start") && currentState.equals(CLEAR.getValue())) {
 			return FuelPage.ID;
 		} else if (currentState.equals(BURNED.getValue())) {
 			fact = addFact(REPLACE_CONTACTS.getFact());
@@ -36,7 +51,7 @@ public class ContactsService extends AbstractService {
 			setRecommendation(REPLACE_CONTACTS.getValue());
 //			getDetailsMap().add(Repair.NAME + REPLACE_CONTACTS.getValue());
 //			getEnviroment().eval("(assert (repair \"Replace the points.\"))");
-			
+			getEnviroment().assertString("(recom (value \"Replace the points.\"))");
 			return RepairPage.ID;
 		} else if (currentState.equals(DIRTY.getValue())) {
 			fact = addFact(CLEAR_CONTACTS.getFact());
