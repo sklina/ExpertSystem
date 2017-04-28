@@ -11,11 +11,12 @@ import expertsystem.service.IgnitionService;
  */
 public class IgnitionPage extends EntityPage {
 
+	public static final String ID = "IgnitionPage";
+	
 	IgnitionService service = new IgnitionService();
 	
 	public IgnitionPage() {
-		setId("IgnitionPage");
-		setTitle("Система зажигания");
+		setName("Система зажигания");
 		setQuestion("Нет ли перебоев в системе зажигания?");
 		setImageUrl("expertsystem/img/zazhiganie2.jpg");
 	}
@@ -27,17 +28,15 @@ public class IgnitionPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		return service.getNextPageId(this);
 	}
 
 	@Override
 	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		service.getPrevPageId(this);
+		return "";
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
+
 
 }

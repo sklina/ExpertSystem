@@ -24,14 +24,6 @@ public class WizardController {
     private StackPane centerPane;
 	
 	public static FlowHandler f;
-	
-//	/** Навигация. */
-//	@FXML @ActionTrigger("back")
-//	public static Button backButton;
-//	@FXML @ActionTrigger("finish")
-//	public static Button finishButton;
-//	@FXML @ActionTrigger("next")
-//	public static Button nextButton;
 
 	
     @PostConstruct

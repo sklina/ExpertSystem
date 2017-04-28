@@ -10,17 +10,25 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class KnockInTheEngine extends Entity {
-	enum State {
-		Yes("Да"), No("Нет");
+	public static final String NAME = "Стук в двигателе - ";
+	
+	public enum State {
+		YES("Да", ""), NO("Нет", "");
 		
 		private String value;
+		private String fact;
 		
-	    private State(String value) {
+	    private State(String value, String fact) {
 			this.value = value;
+			this.fact = fact;
 		} 
 		
 		public String getValue() {
 			return this.value;
+		}
+		
+		public String getFact() {
+			return this.fact;
 		}
 	}
 	

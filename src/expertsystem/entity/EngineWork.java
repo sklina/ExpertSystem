@@ -6,21 +6,29 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Двигатель
+ * Рабочее состояние двигателя
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class EngineWork extends Entity {
-	enum State {
-		Normal("Нормально"), Bad("Неудовлетворительно");
+	public static final String NAME = "Рабочее состояние двигателя - ";
+	
+	public enum State {
+		NORMAL("Нормально", "working-state engine normal"), BAD("Неудовлетворительно", "working-state engine unsatisfactory");
 		
 		private String value;
+		private String fact;
 		
-	    private State(String value) {
+	    private State(String value, String fact) {
 			this.value = value;
+			this.fact = fact;
 		} 
 		
 		public String getValue() {
 			return this.value;
+		}
+		
+		public String getFact() {
+			return this.fact;
 		}
 	}
 	

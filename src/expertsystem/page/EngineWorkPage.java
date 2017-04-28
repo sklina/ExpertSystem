@@ -12,11 +12,12 @@ import expertsystem.service.EngineWorkService;
  */
 public class EngineWorkPage extends EntityPage {
 
+	public static final String ID = "EngineWorkPage";
+	
 	EngineWorkService service = new EngineWorkService();
 	
 	public EngineWorkPage() {
-		setId("EngineWorkPage");
-		setTitle("Рабочее состояние двигателя");
+		setName("Рабочее состояние двигателя");
 		setQuestion("Как работает двигатель?");
 		setImageUrl("expertsystem/img/dvigatRabSost.jpg");
 	}
@@ -28,17 +29,14 @@ public class EngineWorkPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		return service.getNextPageId(this);
 	}
 
 	@Override
 	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		service.getPrevPageId(this);
+		return "";
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

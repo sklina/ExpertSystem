@@ -1,22 +1,67 @@
 package expertsystem.service;
 
+import expertsystem.entity.BatteryCharge;
+import expertsystem.page.EntityPage;
+import static expertsystem.entity.BatteryCharge.State.CHARGE;
+import static expertsystem.entity.BatteryCharge.State.NOT_CHARGE;
+import expertsystem.entity.Repair;
+import static expertsystem.entity.Repair.State.CHARGE_BATTERY;
+import static expertsystem.entity.Repair.State.NO_REPAIR;
+import expertsystem.page.IgnitionCoilPage;
+import expertsystem.page.IgnitionPage;
+import expertsystem.page.RepairPage;
+
 /**
  * состояние
+ *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class BatteryChargeService extends AbstractService {
 
 	@Override
-	public String addFacts(String currentState) {
-		if (currentState.equals("Да")) {
-			getEnviroment().eval("(assert (charge-state battery charged))");
-			return "IgnitionCoilPage";
-		} else if (currentState.equals("Нет")) {
-			getEnviroment().eval("(assert (repair \"Charge the battery.\"))");
-			getEnviroment().eval("(assert (charge-state battery dead))");
-			return "RepairPage";
+	public String getNextPageId(EntityPage page) {
+		String currentState = page.getEntity().getCurrentState();
+		String fact;
+		if (currentState.equals(CHARGE.getValue())) {
+			fact = addFact(CHARGE.getFact());
+			getEnviroment().eval(fact);
+			getDetailsMap().put(BatteryCharge.NAME, CHARGE.getValue());
+
+			return IgnitionCoilPage.ID;
+		} else if (currentState.equals(NOT_CHARGE.getValue())) {
+			fact = addFact(NOT_CHARGE.getFact());
+			getEnviroment().eval(fact);
+			getDetailsMap().put(BatteryCharge.NAME, NOT_CHARGE.getValue());
+			fact = addFact(CHARGE_BATTERY.getFact());
+			getEnviroment().eval(fact);
+//			getDetailsMap().add(Repair.NAME + CHARGE_BATTERY.getValue());
+			setRecommendation(CHARGE_BATTERY.getValue());
+//			getEnviroment().eval("(assert (repair \"Charge the battery.\"))");
+
+			return RepairPage.ID;
 		}
 		return null;
 	}
 
+	@Override
+	public void getPrevPageId(EntityPage page) {
+//		String currentState = page.getEntity().getCurrentState();
+//		String fact;
+//		if (currentState.equals(CHARGE.getValue())) {
+//			fact = addFact(CHARGE.getFact());
+//			getENVIROMENT().eval(fact);
+//			getDetailsMap().add(BatteryCharge.NAME + CHARGE.getValue());
+//
+//		} else if (currentState.equals(NOT_CHARGE.getValue())) {
+//			fact = addFact(NOT_CHARGE.getFact());
+//			getENVIROMENT().eval(fact);
+//			getDetailsMap().add(BatteryCharge.NAME + NOT_CHARGE.getValue());
+//			fact = addFact(CHARGE_BATTERY.getFact());
+//			getENVIROMENT().eval(fact);
+////			getDetailsMap().add(Repair.NAME + CHARGE_BATTERY.getValue());
+//			setRecommendation(CHARGE_BATTERY.getValue());
+////			getEnviroment().eval("(assert (repair \"Charge the battery.\"))");
+//
+//		}
+	}
 }

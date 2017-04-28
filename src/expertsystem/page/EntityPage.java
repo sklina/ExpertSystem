@@ -9,11 +9,10 @@ import java.util.Map;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public abstract class EntityPage {
-	private String id;
-	private String title;
+	private String name;
 	private String question;
 	private String imageUrl;
-	
+	private String description;
 	private Entity entity;
 	Map<String, Entity> buffer;
 	
@@ -27,28 +26,26 @@ public abstract class EntityPage {
 		return entity;
 	}
 
-	public String getId() {
-		return id;
-	}
 
 	public String getQuestion() {
 		return question;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getName() {
+		return name;
 	}
 
 	public String getImageUrl() {
 		return imageUrl;
 	}
 
-	protected final void setId(String id) {
-		this.id = id;
+	public String getDescription() {
+		return description;
 	}
+	
 
-	protected final void setTitle(String title) {
-		this.title = title;
+	protected final void setName(String name) {
+		this.name = name;
 	}
 
 	protected final void setQuestion(String question) {
@@ -58,6 +55,11 @@ public abstract class EntityPage {
 	protected final void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 	
 	
 	
@@ -67,6 +69,5 @@ public abstract class EntityPage {
 	
 	public abstract String getNextPageId();
 	public abstract String getPreviousPageId();
-	public abstract String getFinishPageId();
 
 }

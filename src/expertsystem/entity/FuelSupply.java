@@ -10,17 +10,25 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class FuelSupply extends Entity {
-	enum State {
-		Inert("Подача топлива инертна"), IDK("Затрудняюсь ответить");
+	public static final String NAME = "Подача топлива - ";
+	
+	public enum State {
+		INERT("Подача топлива инертна", ""), IDK("Затрудняюсь ответить", "");
 		
 		private String value;
+		private String fact;
 		
-	    private State(String value) {
+	    private State(String value, String fact) {
 			this.value = value;
+			this.fact = fact;
 		} 
 		
 		public String getValue() {
 			return this.value;
+		}
+		
+		public String getFact() {
+			return this.fact;
 		}
 	}
 	

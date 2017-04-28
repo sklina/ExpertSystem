@@ -11,11 +11,12 @@ import expertsystem.service.IgnitionCoilService;
  */
 public class IgnitionCoilPage extends EntityPage {
 
+	public static final String ID = "IgnitionCoilPage";
+	
 	IgnitionCoilService service = new IgnitionCoilService();
 	
 	public IgnitionCoilPage() {
-		setId("IgnitionCoilPage");
-		setTitle("Катушка зажигания");
+		setName("Катушка зажигания");
 		setQuestion("Катушка зажигания проводит ток?");
 		setImageUrl("expertsystem/img/katushka.jpg");
 	}
@@ -27,17 +28,14 @@ public class IgnitionCoilPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		return service.getNextPageId(this);
 	}
 
 	@Override
 	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		service.getPrevPageId(this);
+		return "";
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

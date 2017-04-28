@@ -11,11 +11,12 @@ import expertsystem.service.FuelSupplyService;
  */
 public class FuelSupplyPage extends EntityPage {
 
+	public static final String ID = "FuelSupplyPage";
+	
 	FuelSupplyService service = new FuelSupplyService();
 	
 	public FuelSupplyPage() {
-		setId("FuelSupplyPage");
-		setTitle("Подача топлива");
+		setName("Подача топлива");
 		setQuestion("Двигатель не сразу реагирует на подачу топлива?");
 		setImageUrl("expertsystem/img/benz.jpg");
 	}
@@ -27,17 +28,14 @@ public class FuelSupplyPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		return service.getNextPageId(this);
 	}
 
 	@Override
 	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		service.getPrevPageId(this);
+		return "";
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

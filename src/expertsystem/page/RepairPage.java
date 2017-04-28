@@ -11,15 +11,16 @@ import expertsystem.service.RepairService;
  */
 public class RepairPage extends EntityPage {
 
+	public static final String ID = "RepairPage";
+	
 	RepairService service = new RepairService();
 	
 	public RepairPage() {
-		setId("RepairPage");
-		setTitle("Рекомендация");
-		setQuestion("");
+		setName("Рекомендация");
+		
 		setImageUrl("expertsystem/img/remont2.jpg");
 	}
-	
+
 	
 
 	@Override
@@ -29,7 +30,10 @@ public class RepairPage extends EntityPage {
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		String res = service.getNextPageId(this);
+		setDescription(service.getDescription());
+		setQuestion(service.getRecommendation());
+		return res;
 	}
 
 	@Override
@@ -37,9 +41,5 @@ public class RepairPage extends EntityPage {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

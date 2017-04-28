@@ -9,9 +9,10 @@ import expertsystem.entity.Entity;
  */
 public class WelcomePage extends EntityPage {
 
+	public static final String ID = "WelcomePage";
+	
 	public WelcomePage() {
-		setId("WelcomePage");
-		setTitle("AutoExpert. Приветствие");
+		setName("AutoExpert. Приветствие");
 
 	}
 
@@ -31,9 +32,5 @@ public class WelcomePage extends EntityPage {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

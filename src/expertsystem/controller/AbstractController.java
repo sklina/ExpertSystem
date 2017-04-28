@@ -34,7 +34,6 @@ public abstract class AbstractController implements Initializable {
 	@FXML @ActionTrigger("next")
 	public Button nextButton;
 	
-	
 	/** Элементы окна. */
 	@FXML
 	Label questionLabel;
@@ -69,7 +68,7 @@ public abstract class AbstractController implements Initializable {
 	private void onComboBox() throws VetoException, FlowException {
 		if (comboBox.getSelectionModel().getSelectedItem() != null) {
 			getEntityPage().getEntity().setCurrentState(comboBox.getSelectionModel().getSelectedItem());
-			getEntityPage().getNextPageId();
+//			getEntityPage().getNextPageId();
 		}
 		System.out.println("Установлено состояние \"" + getEntityPage().getEntity().getCurrentState()
 				+ "\" для сущности " + getEntityPage().getEntity().getClass().getSimpleName());
@@ -79,6 +78,7 @@ public abstract class AbstractController implements Initializable {
 	@ActionMethod("back")
 	public void onBack() throws VetoException, FlowException {
 		flowHandler.navigateBack();
+		getEntityPage().getPreviousPageId();
 	}
 
 	@FXML
@@ -98,8 +98,8 @@ public abstract class AbstractController implements Initializable {
 	@FXML
 	public void onMouseMoved() {
 		Stage stage = (Stage) getNextButton().getScene().getWindow();
-		if (!getEntityPage().getTitle().equals(stage.getTitle()))
-			stage.setTitle(getEntityPage().getTitle());
+		if (!getEntityPage().getName().equals(stage.getTitle()))
+			stage.setTitle(getEntityPage().getName());
 	}
 
 	/** Инициализация элементов окна. */

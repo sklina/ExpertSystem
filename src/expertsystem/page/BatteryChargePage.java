@@ -9,11 +9,12 @@ import expertsystem.service.BatteryChargeService;
 
 public class BatteryChargePage extends EntityPage{
 
+	public static final String ID = "BatteryChargePage";
+	
 	BatteryChargeService service = new BatteryChargeService();
 	
 	public BatteryChargePage() {
-		setId("BatteryChargePage");
-		setTitle("Заряд аккумулятора");
+		setName("Заряд аккумулятора");
 		setQuestion("Заряжен ли аккумулятор?");
 		setImageUrl("expertsystem/img/akkum.jpg");
 	}
@@ -25,17 +26,14 @@ public class BatteryChargePage extends EntityPage{
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		return service.getNextPageId(this);
 	}
 
 	@Override
 	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		service.getPrevPageId(this);
+		return "";
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

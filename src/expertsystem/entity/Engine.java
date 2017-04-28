@@ -6,21 +6,30 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Двигатель
+ * Состояние двигателя
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Engine extends Entity {
-	enum State {
-		Yes("Да"), No("Нет");
+	public static final String NAME = "Состояние двигателя - ";
+	
+	public enum State {
+		YES("Заводится", ""), NO("Не заводится", "working-state engine does-not-start");
 		
 		private String value;
 		
-	    private State(String value) {
+	    private String fact;
+		
+	    private State(String value, String fact) {
 			this.value = value;
+			this.fact = fact;
 		} 
 		
 		public String getValue() {
 			return this.value;
+		}
+		
+		public String getFact() {
+			return this.fact;
 		}
 	}
 	

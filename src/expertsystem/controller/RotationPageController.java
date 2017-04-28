@@ -14,7 +14,7 @@ public class RotationPageController extends AbstractController {
 	public void initButtons() {
 		getNextButton().setDisable(true);
 		getFinishButton().setDisable(true);
-		getBackButton().setDisable(true);
+		getBackButton().setDisable(false);
 	}
 
 	@Override

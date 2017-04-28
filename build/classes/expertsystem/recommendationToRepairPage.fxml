@@ -38,20 +38,23 @@
             <Image url="@img/remont2.jpg" />
          </image>
       </ImageView>
-      <TabPane layoutX="31.0" layoutY="52.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="161.0" prefWidth="294.0" stylesheets="@tabStyle.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="31.0" layoutY="52.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="208.0" prefWidth="480.0" stylesheets="@tabStyle.css" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Рекомендация">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="83.0" prefWidth="309.0">
                      <children>
-                        <Label layoutX="14.0" layoutY="14.0" prefHeight="72.0" prefWidth="237.0" text="    К сожалению, нам не удалось выявить причину неисправности. Советуем Вам отвезти автомобиль к механику." textAlignment="JUSTIFY" wrapText="true" />
+                        <Label fx:id="recommendation" layoutX="14.0" layoutY="14.0" prefHeight="71.0" prefWidth="305.0" text="    К сожалению, нам не удалось выявить причину неисправности. Советуем Вам отвезти автомобиль к механику." textAlignment="JUSTIFY" wrapText="true" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
           <Tab text="Подробнее">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <Label fx:id="info" layoutX="14.0" layoutY="7.0" prefHeight="138.0" prefWidth="321.0" />
+                        </children></AnchorPane>
             </content>
           </Tab>
         </tabs>

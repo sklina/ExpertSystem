@@ -11,11 +11,12 @@ import expertsystem.service.ContactsService;
  */
 public class ContactsPage extends EntityPage{
 
+	public static final String ID = "ContactsPage";
+	
 	ContactsService service = new ContactsService();
 	
 	public ContactsPage() {
-		setId("ContactsPage");
-		setTitle("Контакты");
+		setName("Контакты");
 		setQuestion("Какое состояние поверхности контактов?");
 		setImageUrl("expertsystem/img/contact.jpg");
 	}
@@ -28,17 +29,14 @@ public class ContactsPage extends EntityPage{
 
 	@Override
 	public String getNextPageId() {
-		return service.addFacts(getEntity().getCurrentState());
+		return service.getNextPageId(this);
 	}
 
 	@Override
 	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		service.getPrevPageId(this);
+		return "";
 	}
 
-	@Override
-	public String getFinishPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-	}
 
 }

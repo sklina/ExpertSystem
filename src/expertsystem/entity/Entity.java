@@ -8,8 +8,6 @@ import java.util.List;
  */
 public abstract class Entity {
 	
-//	private String id;
-//	private String question;
 	private String currentState;
 	
 	public abstract List<String> getStates();
