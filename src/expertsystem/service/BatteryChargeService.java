@@ -24,16 +24,16 @@ public class BatteryChargeService extends AbstractService {
 		String fact;
 		if (currentState.equals(CHARGE.getValue())) {
 			fact = addFact(CHARGE.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(BatteryCharge.NAME, CHARGE.getValue());
 
 			return IgnitionCoilPage.ID;
 		} else if (currentState.equals(NOT_CHARGE.getValue())) {
 			fact = addFact(NOT_CHARGE.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(BatteryCharge.NAME, NOT_CHARGE.getValue());
 			fact = addFact(CHARGE_BATTERY.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 //			getDetailsMap().add(Repair.NAME + CHARGE_BATTERY.getValue());
 			setRecommendation(CHARGE_BATTERY.getValue());
 //			getEnviroment().eval("(assert (repair \"Charge the battery.\"))");

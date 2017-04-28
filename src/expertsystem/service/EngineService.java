@@ -21,11 +21,17 @@ public class EngineService extends AbstractService {
 		if (currentState.equals(YES.getValue())) {
 			setEngineStart(true);
 			
+//			getEnviroment().eval("(facts)");
+
+			getEnviroment().assertString("(engine (state start))");
+//			getEnviroment().eval("(facts)");
+			
 			return EngineWorkPage.ID;
 		} else if (currentState.equals(NO.getValue())) {
 			setEngineStart(false);
+			getEnviroment().assertString("(engine (state does-not-start))");
 			fact = addFact(NO.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Engine.NAME, NO.getValue());
 			
 			return RotationPage.ID;

@@ -27,13 +27,13 @@ public class PowerService extends AbstractService {
 		
 		if (currentState.equals(LOW.getValue())) {
 			fact = addFact(LOW.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Power.NAME , LOW.getValue());
 			
 			return ContactsPage.ID;
 		} else if (currentState.equals(NORMAL.getValue())) {
 			fact = addFact(NORMAL.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Power.NAME , NORMAL.getValue());
 			
 			return FuelSupplyPage.ID;

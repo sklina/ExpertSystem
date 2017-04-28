@@ -22,7 +22,7 @@ public class FuelSupplyService extends AbstractService {
 		String fact;
 		if (currentState.equals(INERT.getValue())) {
 			fact = addFact(CLEAR_FUEL_LINE.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(CLEAR_FUEL_LINE.getValue());
 //			getDetailsMap().add(Repair.NAME + CLEAR_FUEL_LINE.getValue());
 //			getEnviroment().eval("(assert (repair \"Clean the fuel line.\"))");//

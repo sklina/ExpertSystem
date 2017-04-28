@@ -21,14 +21,14 @@ public class FuelService extends AbstractService {
 		String fact;
 		if (currentState.equals(YES.getValue())) {
 			fact = addFact(MECHANIC.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(MECHANIC.getValue());
 //			getDetailsMap().add(Repair.NAME + MECHANIC.getValue());
 //			getEnviroment().eval("(assert (repair \"Take your car to a mechanic.\"))");//
 			return RepairPage.ID;
 		} else if (currentState.equals(NO.getValue())) {
 			fact = addFact(ADD_GASS.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(ADD_GASS.getValue());
 //			getDetailsMap().add(Repair.NAME + ADD_GASS.getValue());
 //			getEnviroment().eval("(assert (repair \"Add g a s . \" ))");//

@@ -24,12 +24,12 @@ public class IgnitionService extends AbstractService {
 		
 		if (currentState.equals(NO_SPARK.getValue())) {
 			fact = addFact(ADJUST_CONTACTS.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(ADJUST_CONTACTS.getValue());
 //			getDetailsMap().add(Repair.NAME + ADJUST_CONTACTS.getValue());
 //			getEnviroment().eval("(assert (repair \"Point gap adjustment.\"))");
 			fact = addFact(NOT_REGULAR.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Ignition.NAME , NOT_REGULAR.getValue());
 			
 			return RepairPage.ID;

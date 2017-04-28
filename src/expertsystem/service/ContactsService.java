@@ -32,7 +32,7 @@ public class ContactsService extends AbstractService {
 			return FuelPage.ID;
 		} else if (currentState.equals(BURNED.getValue())) {
 			fact = addFact(REPLACE_CONTACTS.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(REPLACE_CONTACTS.getValue());
 //			getDetailsMap().add(Repair.NAME + REPLACE_CONTACTS.getValue());
 //			getEnviroment().eval("(assert (repair \"Replace the points.\"))");
@@ -40,7 +40,7 @@ public class ContactsService extends AbstractService {
 			return RepairPage.ID;
 		} else if (currentState.equals(DIRTY.getValue())) {
 			fact = addFact(CLEAR_CONTACTS.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(CLEAR_CONTACTS.getValue());
 //			getDetailsMap().add(Repair.NAME + CLEAR_CONTACTS.getValue());
 //			getEnviroment().eval("(assert (repair \"Clean the points.\"))");

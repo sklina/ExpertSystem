@@ -26,14 +26,14 @@ public class IgnitionCoilService extends AbstractService {
 		String fact;
 		if (currentState.equals(YES.getValue())) {
 			fact = addFact(REPLACE_WIRES.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(REPLACE_WIRES.getValue());
 //			getDetailsMap().add(Repair.NAME + REPLACE_WIRES.getValue());
 //			getEnviroment().eval("(assert (repair \"Repair the distributor lead wire.\"))");//
 			return RepairPage.ID;
 		} else if (currentState.equals(NO.getValue())) {
 			fact = addFact(REPLACE_COIL.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(REPLACE_COIL.getValue());
 //			getDetailsMap().add(Repair.NAME + REPLACE_COIL.getValue());
 //			getEnviroment().eval("(assert (repair \"Replace the ignition coil.\"))");//

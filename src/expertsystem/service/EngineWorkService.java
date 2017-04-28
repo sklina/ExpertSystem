@@ -30,28 +30,28 @@ public class EngineWorkService extends AbstractService {
 		String currentState = page.getEntity().getCurrentState();
 		String fact;
 		fact = addFact(CHARGE.getFact());
-		getEnviroment().eval(fact);
+		getEnviroment().assertString(fact);
 		getDetailsMap().put(BatteryCharge.NAME , CHARGE.getValue());
 		fact = addFact(ROTATE.getFact());
-		getEnviroment().eval(fact);
+		getEnviroment().assertString(fact);
 		getDetailsMap().put(Rotation.NAME, ROTATE.getValue());
 		if (currentState.equals(NORMAL.getValue())) {
 			fact = addFact(NORMAL.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(EngineWork.NAME , NORMAL.getValue());
 			
 			fact = addFact(NO_REPAIR.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(NO_REPAIR.getValue());
 //			getDetailsMap().add(Repair.NAME + NO_REPAIR.getValue());
 //			getEnviroment().eval("(assert (repair \"No repair needed.\"))");//
 			fact = addFact(NORM.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Ignition.NAME , NORM.getValue());
 			return RepairPage.ID;
 		} else if (currentState.equals(BAD.getValue())) {
 			fact = addFact(BAD.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(EngineWork.NAME , BAD.getValue());
 			return PowerPage.ID;
 		}

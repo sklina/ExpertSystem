@@ -23,14 +23,14 @@ public class KnockInTheEngineService extends AbstractService {
 		
 		if (currentState.equals(YES.getValue())) {
 			fact = addFact(ADJUST_IGNITION.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(ADJUST_IGNITION.getValue());
 //			getDetailsMap().add(Repair.NAME + ADJUST_IGNITION.getValue());
 //			getEnviroment().eval("(assert (repair \"Timing adjustment.\"))");//
 			return RepairPage.ID;
 		} else if (currentState.equals(NO.getValue())) {
 			fact = addFact(MECHANIC.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			setRecommendation(MECHANIC.getValue());
 //			getDetailsMap().add(Repair.NAME + MECHANIC.getValue());
 //			getEnviroment().eval("(assert (repair \"Take your car to a mechanic.\"))");//

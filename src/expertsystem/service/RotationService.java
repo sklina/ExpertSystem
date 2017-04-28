@@ -26,19 +26,19 @@ public class RotationService extends AbstractService {
 		
 		if (currentState.equals(ROTATE.getValue())) {
 			fact = addFact(ROTATE.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Rotation.NAME , ROTATE.getValue());
 			fact = addFact(NOT_REGULAR.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Ignition.NAME , NOT_REGULAR.getValue());
 			
 			return ContactsPage.ID;
 		} else if (currentState.equals(NO_ROTATE.getValue())) {
 			fact = addFact(NO_ROTATE.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Rotation.NAME , NO_ROTATE.getValue());
 			fact = addFact(NO_SPARK.getFact());
-			getEnviroment().eval(fact);
+			getEnviroment().assertString(fact);
 			getDetailsMap().put(Ignition.NAME , NO_SPARK.getValue());
 			
 			return BatteryChargePage.ID;

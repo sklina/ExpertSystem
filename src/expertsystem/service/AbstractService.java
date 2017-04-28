@@ -13,8 +13,9 @@ import net.sf.clipsrules.jni.Environment;
  */
 public abstract class AbstractService {
 
-	public static final String PATH = "F:\\AUTOEXPERT.CLP";
-	private static Environment enviroment = new Environment();
+//	public static final String PATH = "F:\\AUTOEXPERT.CLP";
+	public static final String PATH = "F:\\Рабочий стол\\CLIPS\\ExpertSystem\\AUTOEXPERT.CLP";
+	private static Environment enviroment ;
 	private static boolean engineStart;
 	public static ArrayList<String> facts = new ArrayList<>();
 	public static Map<String, String> details = new HashMap<>();
@@ -23,8 +24,17 @@ public abstract class AbstractService {
 	private String description;
 
 	public AbstractService() {
+		if (enviroment == null) {
+			enviroment = new Environment();
+			enviroment.load(PATH);
+			enviroment.build("(deftemplate engine (slot state))");
+//		enviroment.eval("(deffacts engine (state none))");
+			enviroment.reset();
+		}
+		
 
-		enviroment.load(PATH);
+//		enviroment.assertString("");
+//		enviroment.eval("(deftemplate engine (slot state (type SYMBOL)(default none)))");
 	}
 
 	public static Map<String, String> getDetailsMap() {
@@ -38,9 +48,9 @@ public abstract class AbstractService {
 	public final String addFact(String fact) {
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder
-				.append("(assert (")
+				.append("(")
 				.append(fact)
-				.append("))");
+				.append(")");
 		facts.add(stringBuilder.toString());
 
 		return stringBuilder.toString();
