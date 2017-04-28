@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Ignition extends Entity{
-	public static final String NAME = "Система зажигания - ";
+	public static final String NAME = "Система зажигания";
 
 	public enum State {
 		NORM("Зажигание в порядке", "spark-state engine normal"), 

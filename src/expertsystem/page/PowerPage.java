@@ -16,7 +16,7 @@ public class PowerPage extends EntityPage {
 	PowerService service = new PowerService();
 	
 	public PowerPage() {
-		setName("Мощность");
+		setTitle("Мощность");
 		setQuestion("Какая мощность у двигателя?");
 		setImageUrl("expertsystem/img/power3.jpg");
 	}

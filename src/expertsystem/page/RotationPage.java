@@ -16,7 +16,7 @@ public class RotationPage extends EntityPage {
 	RotationService service = new RotationService();
 	
 	public RotationPage() {
-		setName("Вращение двигателя");
+		setTitle("Вращение двигателя");
 		setQuestion("Вращается ли двигатель?");
 		setImageUrl("expertsystem/img/DvigVraw.jpg");
 	}

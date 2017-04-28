@@ -5,32 +5,12 @@ import javafx.stage.Stage;
 import io.datafx.controller.flow.Flow;
 import io.datafx.controller.flow.FlowHandler;
 import io.datafx.controller.flow.container.DefaultFlowContainer;
-import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 
 
 public class ExpertSystem  extends Application {
 
-//    public static void main(String[] args) {
-//        launch(args);
-//    }
-//	
-//	private static Stage primaryStage; // **Declare static Stage**
-//	
-//	private static Flow flow;
-//
-//	public static Flow getFlow() {
-//		return flow;
-//	}
-//
-//    private void setPrimaryStage(Stage stage) {
-//        ExpertSystem.primaryStage = stage;
-//    }
-//
-//    static public Stage getPrimaryStage() {
-//        return ExpertSystem.primaryStage;
-//    }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -40,26 +20,5 @@ public class ExpertSystem  extends Application {
         StackPane pane = flowHandler.start(new DefaultFlowContainer());
         primaryStage.setScene(new Scene(pane));
         primaryStage.show();
-//		new Flow(WelcomePageController.class).
-//                withLink(WelcomePageController.class, "next", EnginePageController.class).
-//                withLink(EnginePageController.class, "next", EngineWorkPageController.class).
-//                withLink(EngineWorkPageController.class, "next", RotationPageController.class).
-//				withLink(RotationPageController.class, "next", IgnitionPageController.class).
-//				withLink(IgnitionPageController.class, "next", BatteryChargePageController.class).
-//                withLink(BatteryChargePageController.class, "next", PowerPageController.class).
-//                withLink(PowerPageController.class, "next", FuelPageController.class).
-//				withLink(FuelPageController.class, "next", ContactsPageController.class).
-//				withLink(ContactsPageController.class, "next", IgnitionCoilPageController.class).
-//                withLink(IgnitionCoilPageController.class, "next", FuelSupplyPageController.class).
-//                withLink(FuelSupplyPageController.class, "next", KnockInTheEnginePageController.class).
-//				withLink(KnockInTheEnginePageController.class, "next", RepairPageController.class).
-//				withGlobalBackAction("back").
-//				withGlobalLink("finish", RepairPageController.class).
-//				startInStage(primaryStage);
-//		setPrimaryStage(primaryStage); // **Set the Stage**
-//		flow = new Flow(WelcomePageController.class).
-//				withGlobalBackAction("back").
-//				withGlobalLink("finish", RepairPageController.class);
-//		flow.startInStage(primaryStage);
     }
 }

@@ -14,7 +14,7 @@ public class BatteryChargePage extends EntityPage{
 	BatteryChargeService service = new BatteryChargeService();
 	
 	public BatteryChargePage() {
-		setName("Заряд аккумулятора");
+		setTitle("Заряд аккумулятора");
 		setQuestion("Заряжен ли аккумулятор?");
 		setImageUrl("expertsystem/img/akkum.jpg");
 	}

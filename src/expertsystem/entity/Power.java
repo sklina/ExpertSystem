@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Power extends Entity {
-	public static final String NAME = "Мощность - ";
+	public static final String NAME = "Мощность";
 	
 	public enum State {
 		LOW("Низкая", "symptom engine low-output"), NORMAL("Нормальная", "symptom engine not-low-output");

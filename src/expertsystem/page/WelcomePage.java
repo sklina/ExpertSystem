@@ -12,7 +12,7 @@ public class WelcomePage extends EntityPage {
 	public static final String ID = "WelcomePage";
 	
 	public WelcomePage() {
-		setName("AutoExpert. Приветствие");
+		setTitle("AutoExpert. Приветствие");
 
 	}
 

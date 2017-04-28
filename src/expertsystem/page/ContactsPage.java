@@ -16,7 +16,7 @@ public class ContactsPage extends EntityPage{
 	ContactsService service = new ContactsService();
 	
 	public ContactsPage() {
-		setName("Контакты");
+		setTitle("Контакты");
 		setQuestion("Какое состояние поверхности контактов?");
 		setImageUrl("expertsystem/img/contact.jpg");
 	}

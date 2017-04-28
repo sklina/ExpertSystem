@@ -2,7 +2,6 @@ package expertsystem.controller;
 
 import expertsystem.page.EntityPage;
 import expertsystem.page.RepairPage;
-import expertsystem.service.RepairService;
 import io.datafx.controller.ViewController;
 import java.net.URL;
 import java.util.ResourceBundle;

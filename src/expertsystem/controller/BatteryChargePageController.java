@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
-@ViewController(value = "/expertsystem/batteryChargePage.fxml", title = "Заряд аккумулятора")
+@ViewController(value = "/expertsystem/batteryChargePage.fxml")
 public class BatteryChargePageController extends AbstractController {
 
 	@PostConstruct

@@ -16,7 +16,7 @@ public class KnockInTheEnginePage extends EntityPage {
 	KnockInTheEngineService service = new KnockInTheEngineService();
 	
 	public KnockInTheEnginePage() {
-		setName("Стук в двигателе");
+		setTitle("Стук в двигателе");
 		setQuestion("Стучит ли двигатель?");
 		setImageUrl("expertsystem/img/DvigStuk.jpg");
 	}

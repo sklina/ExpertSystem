@@ -98,8 +98,8 @@ public abstract class AbstractController implements Initializable {
 	@FXML
 	public void onMouseMoved() {
 		Stage stage = (Stage) getNextButton().getScene().getWindow();
-		if (!getEntityPage().getName().equals(stage.getTitle()))
-			stage.setTitle(getEntityPage().getName());
+		if (!getEntityPage().getTitle().equals(stage.getTitle()))
+			stage.setTitle(getEntityPage().getTitle());
 	}
 
 	/** Инициализация элементов окна. */

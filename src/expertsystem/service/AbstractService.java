@@ -18,25 +18,21 @@ public abstract class AbstractService {
 	private static boolean engineStart;
 	public static ArrayList<String> facts = new ArrayList<>();
 	public static Map<String, String> details = new HashMap<>();
-	
+
 	private static String recommendation;
 	private String description;
-
-	public static Map<String, String> getDetailsMap() {
-		return details;
-	}
-	
-	public static ArrayList<String> getFactsArray() {
-		return facts;
-	}
 
 	public AbstractService() {
 
 		enviroment.load(PATH);
 	}
-	
-	public final void deleteLastFact() {
-		
+
+	public static Map<String, String> getDetailsMap() {
+		return details;
+	}
+
+	public static ArrayList<String> getFactsArray() {
+		return facts;
 	}
 
 	public final String addFact(String fact) {
@@ -46,11 +42,12 @@ public abstract class AbstractService {
 				.append(fact)
 				.append("))");
 		facts.add(stringBuilder.toString());
-		
+
 		return stringBuilder.toString();
 	}
 
 	public abstract String getNextPageId(EntityPage page);
+
 	public abstract void getPrevPageId(EntityPage page);
 
 	protected void runClips() {
@@ -84,5 +81,5 @@ public abstract class AbstractService {
 	public void setRecommendation(String recommendation) {
 		this.recommendation = recommendation;
 	}
-	
+
 }

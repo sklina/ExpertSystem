@@ -17,7 +17,7 @@ public class EngineWorkPage extends EntityPage {
 	EngineWorkService service = new EngineWorkService();
 	
 	public EngineWorkPage() {
-		setName("Рабочее состояние двигателя");
+		setTitle("Рабочее состояние двигателя");
 		setQuestion("Как работает двигатель?");
 		setImageUrl("expertsystem/img/dvigatRabSost.jpg");
 	}

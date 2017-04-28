@@ -16,7 +16,7 @@ public class FuelSupplyPage extends EntityPage {
 	FuelSupplyService service = new FuelSupplyService();
 	
 	public FuelSupplyPage() {
-		setName("Подача топлива");
+		setTitle("Подача топлива");
 		setQuestion("Двигатель не сразу реагирует на подачу топлива?");
 		setImageUrl("expertsystem/img/benz.jpg");
 	}

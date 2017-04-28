@@ -16,7 +16,7 @@ public class IgnitionPage extends EntityPage {
 	IgnitionService service = new IgnitionService();
 	
 	public IgnitionPage() {
-		setName("Система зажигания");
+		setTitle("Система зажигания");
 		setQuestion("Нет ли перебоев в системе зажигания?");
 		setImageUrl("expertsystem/img/zazhiganie2.jpg");
 	}

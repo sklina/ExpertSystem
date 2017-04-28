@@ -16,7 +16,7 @@ public class IgnitionCoilPage extends EntityPage {
 	IgnitionCoilService service = new IgnitionCoilService();
 	
 	public IgnitionCoilPage() {
-		setName("Катушка зажигания");
+		setTitle("Катушка зажигания");
 		setQuestion("Катушка зажигания проводит ток?");
 		setImageUrl("expertsystem/img/katushka.jpg");
 	}

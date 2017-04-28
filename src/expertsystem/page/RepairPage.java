@@ -16,7 +16,7 @@ public class RepairPage extends EntityPage {
 	RepairService service = new RepairService();
 	
 	public RepairPage() {
-		setName("Рекомендация");
+		setTitle("Рекомендация");
 		
 		setImageUrl("expertsystem/img/remont2.jpg");
 	}

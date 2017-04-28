@@ -11,13 +11,19 @@ public class RepairService extends AbstractService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {
-		StringBuilder sb = new StringBuilder();
+		StringBuilder stringBuilder = new StringBuilder();
+		int num = 1;
 		 for(Entry<String,String> entry: getDetailsMap().entrySet()){
-			 sb.append(entry.getKey()).append(entry.getValue()).append("\n");
+			 stringBuilder
+					 .append(num++)
+					 .append(". ")
+					 .append(entry.getKey())
+					 .append(" -> ")
+					 .append(entry.getValue())
+					 .append("\n");
 		 }
-		
-		
-		setDescription(sb.toString());
+				
+		setDescription(stringBuilder.toString());
 		runClips();
 
 		return null;

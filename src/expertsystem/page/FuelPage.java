@@ -16,7 +16,7 @@ public class FuelPage extends EntityPage {
 	FuelService service = new FuelService();
 	
 	public FuelPage() {
-		setName("Топливо");
+		setTitle("Топливо");
 		setQuestion("Есть ли в баке бензин?");
 		setImageUrl("expertsystem/img/benz1.jpg");
 	}

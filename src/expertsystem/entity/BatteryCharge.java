@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  */
 public class BatteryCharge extends Entity{
 
-	public static final String NAME = "Заряд аккумулятора - ";
+	public static final String NAME = "Заряд аккумулятора";
 	public enum State {
 		CHARGE("Заряжен", "charge-state battery charged"), NOT_CHARGE("Не заряжен","charge-state battery dead");
 		

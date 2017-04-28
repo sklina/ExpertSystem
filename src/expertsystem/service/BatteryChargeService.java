@@ -45,23 +45,6 @@ public class BatteryChargeService extends AbstractService {
 
 	@Override
 	public void getPrevPageId(EntityPage page) {
-//		String currentState = page.getEntity().getCurrentState();
-//		String fact;
-//		if (currentState.equals(CHARGE.getValue())) {
-//			fact = addFact(CHARGE.getFact());
-//			getENVIROMENT().eval(fact);
-//			getDetailsMap().add(BatteryCharge.NAME + CHARGE.getValue());
-//
-//		} else if (currentState.equals(NOT_CHARGE.getValue())) {
-//			fact = addFact(NOT_CHARGE.getFact());
-//			getENVIROMENT().eval(fact);
-//			getDetailsMap().add(BatteryCharge.NAME + NOT_CHARGE.getValue());
-//			fact = addFact(CHARGE_BATTERY.getFact());
-//			getENVIROMENT().eval(fact);
-////			getDetailsMap().add(Repair.NAME + CHARGE_BATTERY.getValue());
-//			setRecommendation(CHARGE_BATTERY.getValue());
-////			getEnviroment().eval("(assert (repair \"Charge the battery.\"))");
-//
-//		}
+
 	}
 }

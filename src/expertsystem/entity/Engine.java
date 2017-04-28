@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Engine extends Entity {
-	public static final String NAME = "Состояние двигателя - ";
+	public static final String NAME = "Состояние двигателя";
 	
 	public enum State {
 		YES("Заводится", ""), NO("Не заводится", "working-state engine does-not-start");

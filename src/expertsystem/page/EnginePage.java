@@ -16,7 +16,7 @@ public class EnginePage extends EntityPage {
 	EngineService service = new EngineService();
 	
 	public EnginePage() {
-		setName("Состояние двигателя");
+		setTitle("Состояние двигателя");
 		setQuestion("Заводится ли двигатель?");
 		setImageUrl("expertsystem/img/dvigatel.jpg");
 	}

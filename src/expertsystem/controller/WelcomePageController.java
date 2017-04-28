@@ -5,9 +5,6 @@ import expertsystem.page.WelcomePage;
 import io.datafx.controller.ViewController;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javax.annotation.PostConstruct;
 
 

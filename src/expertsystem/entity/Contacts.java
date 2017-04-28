@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Contacts extends Entity {
-	public static final String NAME = "Контакты - ";
+	public static final String NAME = "Контакты";
 	
 	public enum State {
 		CLEAR("Чистые"), BURNED("Опаленные"), DIRTY("Грязные");

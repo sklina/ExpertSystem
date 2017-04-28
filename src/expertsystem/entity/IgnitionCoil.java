@@ -10,7 +10,7 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class IgnitionCoil extends Entity {
-	public static final String NAME = "Катушка зажигания - ";
+	public static final String NAME = "Катушка зажигания";
 
 	public enum State {
 		YES("Проводит", ""), NO("Не проводит", "");
