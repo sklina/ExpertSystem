@@ -10,7 +10,7 @@ import expertsystem.page.IgnitionPage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class IgnitionService extends Service {
+public class IgnitionService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {

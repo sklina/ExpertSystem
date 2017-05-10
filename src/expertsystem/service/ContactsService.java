@@ -20,7 +20,7 @@ import net.sf.clipsrules.jni.MultifieldValue;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class ContactsService extends Service {
+public class ContactsService extends EntityService {
 
 
     @Override

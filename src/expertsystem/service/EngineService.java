@@ -11,7 +11,7 @@ import expertsystem.page.RotationPage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class EngineService extends Service {
+public class EngineService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {

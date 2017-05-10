@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
 @ViewController(value = "/expertsystem/batteryChargePage.fxml")
-public class BatteryChargePageController extends AbstractController {
+public class BatteryChargePageController extends EntityController {
 
 	@PostConstruct
 	public void initButtons() {

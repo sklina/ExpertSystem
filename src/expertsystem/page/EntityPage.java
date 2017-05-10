@@ -2,7 +2,7 @@
 package expertsystem.page;
 
 import expertsystem.entity.Entity;
-import expertsystem.service.Service;
+import expertsystem.service.EntityService;
 
 /**
  *
@@ -14,11 +14,11 @@ public abstract class EntityPage {
 	private String imageUrl;
 	private String description;
 	private Entity entity;
-	private Service service;
+	private EntityService service;
 	
 	
 	protected abstract Entity createEntity();
-	protected abstract Service createService();
+	protected abstract EntityService createService();
 	
 	public Entity getEntity() {
 		if (entity == null)
@@ -27,7 +27,7 @@ public abstract class EntityPage {
 		return entity;
 	}
 	
-	public Service getService() {
+	public EntityService getService() {
 		if (service == null)
 			service = createService();
 		

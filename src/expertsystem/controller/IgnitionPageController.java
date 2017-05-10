@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/ignitionPage.fxml")
-public class IgnitionPageController extends AbstractController {
+public class IgnitionPageController extends EntityController {
 
 	@PostConstruct
 	public void initButtons() {

@@ -9,7 +9,7 @@ import net.sf.clipsrules.jni.MultifieldValue;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class RepairService extends Service {
+public class RepairService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {

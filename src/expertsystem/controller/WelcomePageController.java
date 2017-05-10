@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 
 
 @ViewController(value = "/expertsystem/welcomePage.fxml")
-public class WelcomePageController extends AbstractController{
+public class WelcomePageController extends EntityController{
 	
 	@PostConstruct
     public void initButtons() {

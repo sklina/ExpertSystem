@@ -12,7 +12,7 @@ import expertsystem.page.RepairPage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class KnockInTheEngineService extends Service {
+public class KnockInTheEngineService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {

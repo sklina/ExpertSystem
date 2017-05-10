@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
 @ViewController(value = "/expertsystem/rotationPage.fxml", title = "Вращение двигателя")
-public class RotationPageController extends AbstractController {
+public class RotationPageController extends EntityController {
 
 	@PostConstruct
 	public void initButtons() {

@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/recommendationToRepairPage.fxml")
-public class RepairPageController extends AbstractController {
+public class RepairPageController extends EntityController {
 	
 	@FXML
 	public Label recommendation;

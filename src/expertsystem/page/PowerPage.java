@@ -3,7 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Power;
-import expertsystem.service.Service;
+import expertsystem.service.EntityService;
 import expertsystem.service.BatteryChargeService;
 import expertsystem.service.PowerService;
 
@@ -27,7 +27,7 @@ public class PowerPage extends EntityPage {
 	}
 
 	@Override
-	protected Service createService() {
+	protected EntityService createService() {
 		return new PowerService();
 	}
 	

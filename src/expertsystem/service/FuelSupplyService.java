@@ -13,7 +13,7 @@ import expertsystem.page.RepairPage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class FuelSupplyService extends Service {
+public class FuelSupplyService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {

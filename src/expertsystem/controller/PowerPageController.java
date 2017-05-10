@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/powerPage.fxml")
-public class PowerPageController extends AbstractController {
+public class PowerPageController extends EntityController {
 
 	@PostConstruct
 	public void initButtons() {

@@ -2,7 +2,7 @@
 package expertsystem.page;
 
 import expertsystem.entity.Entity;
-import expertsystem.service.Service;
+import expertsystem.service.EntityService;
 
 /**
  *
@@ -32,7 +32,7 @@ public class WelcomePage extends EntityPage {
 	}
 
 	@Override
-	protected Service createService() {
+	protected EntityService createService() {
 		throw new UnsupportedOperationException("Welcome page should not have a Service.");
 	}
 

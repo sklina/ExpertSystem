@@ -3,7 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Repair;
-import expertsystem.service.Service;
+import expertsystem.service.EntityService;
 import expertsystem.service.RepairService;
 
 /**
@@ -25,7 +25,7 @@ public class RepairPage extends EntityPage {
 	}
 	
 	@Override
-	protected Service createService() {
+	protected EntityService createService() {
 		return new RepairService();
 	}
 

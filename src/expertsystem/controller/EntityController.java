@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public abstract class AbstractController implements Initializable {
+public abstract class EntityController implements Initializable {
 
 	/** Навигация. */
 	@FXML @ActionTrigger("back")

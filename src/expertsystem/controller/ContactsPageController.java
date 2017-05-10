@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/contactsPage.fxml")
-public class ContactsPageController extends AbstractController {
+public class ContactsPageController extends EntityController {
 
 	@PostConstruct
 	public void initButtons() {

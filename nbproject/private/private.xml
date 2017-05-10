@@ -3,25 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/EngineWorkService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/RotationService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/PowerService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/FuelService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/ContactsPage.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/RepairPageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/fuelSupply1Page.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/actionBar.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/recommendationToRepairPage.fxml</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/Service.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/ExpertSystem.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/IgnitionCoilPage.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/WizardController.java</file>
             <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/AbstractController.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/RepairService.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/EntityPage.java</file>
             <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/EnginePage.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/IgnitionService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/AbstractService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/BatteryChargeService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/IgnitionCoilService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/KnockInTheEngineService.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/RepairService.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/controller/EngineWorkPageController.java</file>
+            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/wizard.fxml</file>
             <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/ContactsService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/page/EngineWorkPage.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/entity/Engine.java</file>
             <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/EngineService.java</file>
-            <file>file:/F:/Рабочий%20стол/CLIPS/ExpertSystem/src/expertsystem/service/FuelSupplyService.java</file>
         </group>
     </open-files>
 </project-private>

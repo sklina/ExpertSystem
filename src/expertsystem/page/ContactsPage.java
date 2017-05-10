@@ -3,7 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Contacts;
 import expertsystem.entity.Entity;
-import expertsystem.service.Service;
+import expertsystem.service.EntityService;
 import expertsystem.service.ContactsService;
 
 /**
@@ -27,7 +27,7 @@ public class ContactsPage extends EntityPage{
 	}
 	
 	@Override
-	protected Service createService() {
+	protected EntityService createService() {
 		return new ContactsService();
 	}
 

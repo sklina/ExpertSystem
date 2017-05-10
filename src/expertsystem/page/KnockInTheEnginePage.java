@@ -3,7 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.KnockInTheEngine;
-import expertsystem.service.Service;
+import expertsystem.service.EntityService;
 import expertsystem.service.KnockInTheEngineService;
 
 /**
@@ -26,7 +26,7 @@ public class KnockInTheEnginePage extends EntityPage {
 	}
 
 	@Override
-	protected Service createService() {
+	protected EntityService createService() {
 		return new KnockInTheEngineService();
 	}
 	

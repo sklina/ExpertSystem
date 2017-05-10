@@ -11,7 +11,7 @@ import net.sf.clipsrules.jni.Environment;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public abstract class Service {
+public abstract class EntityService {
 
 	/** WARNING! Путь не должен содержать кириллицу, так как Клипс ее не распознает. */
 	public static final String PATH = "F:\\test.CLP";
@@ -22,7 +22,7 @@ public abstract class Service {
 	private static String recommendation;
 	private String description;
 
-	public Service() {
+	public EntityService() {
 		if (enviroment == null) {
 			createEnviroment();
 		}

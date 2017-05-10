@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
 import javax.annotation.PostConstruct;
 
 @ViewController("/expertsystem/enginePage.fxml")
-public class EnginePageController extends AbstractController {
+public class EnginePageController extends EntityController {
 
 	@PostConstruct
 	public void initButtons() {

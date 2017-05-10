@@ -18,7 +18,7 @@ import expertsystem.page.PowerPage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class PowerService extends Service {
+public class PowerService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {

@@ -13,7 +13,7 @@ import expertsystem.page.RotationPage;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class RotationService extends Service {
+public class RotationService extends EntityService {
 
 	@Override
 	public String getNextPageId(EntityPage page) {
