@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Rotation;
+import expertsystem.service.Service;
 import expertsystem.service.RotationService;
 
 /**
@@ -13,10 +14,8 @@ public class RotationPage extends EntityPage {
 
 	public static final String ID = "RotationPage";
 	
-	RotationService service = new RotationService();
-	
 	public RotationPage() {
-		setTitle("Вращение двигателя");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Вращается ли двигатель?");
 		setImageUrl("expertsystem/img/DvigVraw.jpg");
 	}
@@ -25,17 +24,20 @@ public class RotationPage extends EntityPage {
 	protected Entity createEntity() {
 		return new Rotation();
 	}
-
+	
+	@Override
+	protected Service createService() {
+		return new RotationService();
+	}
+	
 	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
 
 }

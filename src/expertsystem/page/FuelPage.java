@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Fuel;
+import expertsystem.service.Service;
 import expertsystem.service.FuelService;
 
 /**
@@ -13,10 +14,8 @@ public class FuelPage extends EntityPage {
 
 	public static final String ID = "FuelPage";
 	
-	FuelService service = new FuelService();
-	
 	public FuelPage() {
-		setTitle("Топливо");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Есть ли в баке бензин?");
 		setImageUrl("expertsystem/img/benz1.jpg");
 	}
@@ -27,15 +26,18 @@ public class FuelPage extends EntityPage {
 	}
 
 	@Override
+	protected Service createService() {
+		return  new FuelService();
+	}
+	
+	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
 
-	
 }

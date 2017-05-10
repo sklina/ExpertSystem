@@ -9,6 +9,7 @@ import java.util.List;
 public abstract class Entity {
 	
 	private String currentState;
+	private String entityName;
 	
 	public abstract List<String> getStates();
 
@@ -16,8 +17,16 @@ public abstract class Entity {
 		return currentState;
 	}
 
-	public void setCurrentState(String currentState) {
+	public final void setCurrentState(String currentState) {
 		this.currentState = currentState;
+	}
+
+	public String getEntityName() {
+		return entityName;
+	}
+
+	protected final void setEntityName(String entityName) {
+		this.entityName = entityName;
 	}
 	
 }

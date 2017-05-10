@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.BatteryCharge;
 import expertsystem.entity.Entity;
+import expertsystem.service.Service;
 import expertsystem.service.BatteryChargeService;
 
 
@@ -11,10 +12,8 @@ public class BatteryChargePage extends EntityPage{
 
 	public static final String ID = "BatteryChargePage";
 	
-	BatteryChargeService service = new BatteryChargeService();
-	
 	public BatteryChargePage() {
-		setTitle("Заряд аккумулятора");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Заряжен ли аккумулятор?");
 		setImageUrl("expertsystem/img/akkum.jpg");
 	}
@@ -23,17 +22,20 @@ public class BatteryChargePage extends EntityPage{
 	protected Entity createEntity() {
 		return new BatteryCharge();
 	}
+	
+	@Override
+	protected Service createService() {
+		return new BatteryChargeService();
+	}
 
 	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
 
 }

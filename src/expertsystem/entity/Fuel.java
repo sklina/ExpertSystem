@@ -10,13 +10,16 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Fuel extends Entity {
-	public static final String NAME = "Топливо";
+
+	public Fuel() {
+		setEntityName("Топливо");
+	}
 	
 	public enum State {
-		YES("Есть", ""), NO("Нет", "");
+		YES("Есть","Yes"), NO("Нет", "No");
 		
 		private String value;
-	    private String fact;
+		private String fact;
 		
 	    private State(String value, String fact) {
 			this.value = value;

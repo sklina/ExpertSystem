@@ -26,7 +26,6 @@ import javafx.stage.Stage;
 public abstract class AbstractController implements Initializable {
 
 	/** Навигация. */
-	
 	@FXML @ActionTrigger("back")
 	public Button backButton;
 	@FXML @ActionTrigger("finish")
@@ -68,7 +67,6 @@ public abstract class AbstractController implements Initializable {
 	private void onComboBox() throws VetoException, FlowException {
 		if (comboBox.getSelectionModel().getSelectedItem() != null) {
 			getEntityPage().getEntity().setCurrentState(comboBox.getSelectionModel().getSelectedItem());
-//			getEntityPage().getNextPageId();
 		}
 		System.out.println("Установлено состояние \"" + getEntityPage().getEntity().getCurrentState()
 				+ "\" для сущности " + getEntityPage().getEntity().getClass().getSimpleName());
@@ -85,6 +83,7 @@ public abstract class AbstractController implements Initializable {
 	@ActionMethod("next")
 	public void onNext() throws VetoException, FlowException, ClassNotFoundException {
 		String className = "expertsystem.controller." + getEntityPage().getNextPageId() + "Controller";
+                
 		flowHandler.navigateTo(Class.forName(className));
 	}
 
@@ -119,7 +118,7 @@ public abstract class AbstractController implements Initializable {
 		questionLabel.setText(getEntityPage().getQuestion());
 	}
 
-		@Override
+	@Override
 	public abstract void initialize(URL location, ResourceBundle resources);
 
 }

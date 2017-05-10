@@ -22,7 +22,6 @@ public class EnginePageController extends AbstractController {
 		initQuestionLabel();
 		initComboBox();
 		initImageView();
-
 	}
 
 	@Override

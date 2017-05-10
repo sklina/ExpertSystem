@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Engine;
 import expertsystem.entity.Entity;
+import expertsystem.service.Service;
 import expertsystem.service.EngineService;
 
 /**
@@ -12,11 +13,10 @@ import expertsystem.service.EngineService;
 public class EnginePage extends EntityPage {
 
 	public static final String ID = "EnginePage";
-	
-	EngineService service = new EngineService();
+
 	
 	public EnginePage() {
-		setTitle("Состояние двигателя");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Заводится ли двигатель?");
 		setImageUrl("expertsystem/img/dvigatel.jpg");
 	}
@@ -25,20 +25,20 @@ public class EnginePage extends EntityPage {
 	protected Entity createEntity() {
 		return new Engine();
 	}
-
 	
+	@Override
+	protected Service createService() {
+		return new EngineService();
+	}
 	
 	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
-
 
 }

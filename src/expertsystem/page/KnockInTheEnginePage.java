@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.KnockInTheEngine;
+import expertsystem.service.Service;
 import expertsystem.service.KnockInTheEngineService;
 
 /**
@@ -13,10 +14,8 @@ public class KnockInTheEnginePage extends EntityPage {
 
 	public static final String ID = "KnockInTheEnginePage";
 	
-	KnockInTheEngineService service = new KnockInTheEngineService();
-	
 	public KnockInTheEnginePage() {
-		setTitle("Стук в двигателе");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Стучит ли двигатель?");
 		setImageUrl("expertsystem/img/DvigStuk.jpg");
 	}
@@ -27,15 +26,18 @@ public class KnockInTheEnginePage extends EntityPage {
 	}
 
 	@Override
+	protected Service createService() {
+		return new KnockInTheEngineService();
+	}
+	
+	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
 
 }

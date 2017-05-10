@@ -3,12 +3,9 @@ package expertsystem.service;
 import static expertsystem.entity.Contacts.State.BURNED;
 import static expertsystem.entity.Contacts.State.CLEAR;
 import static expertsystem.entity.Contacts.State.DIRTY;
-import expertsystem.entity.Ignition;
-import expertsystem.entity.Power;
-import expertsystem.entity.Repair;
 import static expertsystem.entity.Repair.State.CLEAR_CONTACTS;
 import static expertsystem.entity.Repair.State.REPLACE_CONTACTS;
-import expertsystem.entity.Rotation;
+import expertsystem.page.ContactsPage;
 import expertsystem.page.EntityPage;
 import expertsystem.page.FuelPage;
 import expertsystem.page.FuelSupplyPage;
@@ -23,54 +20,56 @@ import net.sf.clipsrules.jni.MultifieldValue;
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class ContactsService extends AbstractService {
+public class ContactsService extends Service {
 
-	@Override
-	public String getNextPageId(EntityPage page) {
-		String currentState = page.getEntity().getCurrentState();
-		String fact;
-		
-		MultifieldValue mv = (MultifieldValue) getEnviroment().eval("(find-fact ((?f engine)) TRUE)");
-		FactAddressValue factEngine = (FactAddressValue) mv.multifieldValue().get(0);
-		String engineState = "";
-		try {
-			engineState = factEngine.getFactSlot("state").toString();
-			System.out.println("Engine state is " + engineState);
-		} catch (Exception ex) {
-			Logger.getLogger(EngineService.class.getName()).log(Level.SEVERE, null, ex);
-		}
-		
-		//если двигатель заводится
-		if (engineState.equals("start") && currentState.equals(CLEAR.getValue())) {
-			return FuelSupplyPage.ID;
-		} else if (engineState.equals("does-not-start") && currentState.equals(CLEAR.getValue())) {
-			return FuelPage.ID;
-		} else if (currentState.equals(BURNED.getValue())) {
-			fact = addFact(REPLACE_CONTACTS.getFact());
-			getEnviroment().assertString(fact);
-			setRecommendation(REPLACE_CONTACTS.getValue());
-//			getDetailsMap().add(Repair.NAME + REPLACE_CONTACTS.getValue());
-//			getEnviroment().eval("(assert (repair \"Replace the points.\"))");
-			getEnviroment().assertString("(recom (value \"Replace the points.\"))");
-			return RepairPage.ID;
-		} else if (currentState.equals(DIRTY.getValue())) {
-			fact = addFact(CLEAR_CONTACTS.getFact());
-			getEnviroment().assertString(fact);
-			setRecommendation(CLEAR_CONTACTS.getValue());
-//			getDetailsMap().add(Repair.NAME + CLEAR_CONTACTS.getValue());
-//			getEnviroment().eval("(assert (repair \"Clean the points.\"))");
+
+    @Override
+    public String getNextPageId(EntityPage page) {
+        String currentState = page.getEntity().getCurrentState();
+        String engineState = getEngineState();
+
+        //если двигатель заводится
+        if (engineState.equals("start") && currentState.equals(CLEAR.getValue())) {
+            return FuelSupplyPage.ID;
+        } else if (engineState.equals("does-not-start") && currentState.equals(CLEAR.getValue())) {
+            return FuelPage.ID;
+        } else if (currentState.equals(BURNED.getValue())) {
+            addQuestionFact(ContactsPage.ID, BURNED.getFact());
+			getEnviroment().run(1);
 			
-			return RepairPage.ID;
-		}
+			arrayOfFacts.add("repair \"Replace the points.\"");
+            setRecommendation(REPLACE_CONTACTS.getValue());
+            return RepairPage.ID;
+        } else if (currentState.equals(DIRTY.getValue())) {
+            addQuestionFact(ContactsPage.ID, DIRTY.getFact());
+			getEnviroment().run(1);
 
-		return null;
-	}
+			arrayOfFacts.add("repair \"Clean the points.\"");
+            setRecommendation(CLEAR_CONTACTS.getValue());
+            return RepairPage.ID;
+        }
 
-	@Override
-	public void getPrevPageId(EntityPage page) {
-		getDetailsMap().remove(Power.NAME);
-		getDetailsMap().remove(Rotation.NAME);
-		getDetailsMap().remove(Ignition.NAME);
-		
-	}
+        return null;
+    }
+
+    @Override
+    public void getPrevPageId(EntityPage page) {
+
+    }
+    
+    
+    private String getEngineState() {
+        String engineState = "";
+        MultifieldValue mv = (MultifieldValue) getEnviroment().eval("(find-fact ((?f engine)) TRUE)");
+        FactAddressValue factEngine = (FactAddressValue) mv.multifieldValue().get(0);
+
+        try {
+            engineState = factEngine.getFactSlot("state").toString();
+            System.out.println("Engine state is " + engineState);
+        } catch (Exception ex) {
+            Logger.getLogger(EngineService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return engineState;
+    }
 }

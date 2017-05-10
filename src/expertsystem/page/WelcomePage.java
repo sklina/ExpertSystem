@@ -2,6 +2,7 @@
 package expertsystem.page;
 
 import expertsystem.entity.Entity;
+import expertsystem.service.Service;
 
 /**
  *
@@ -13,13 +14,11 @@ public class WelcomePage extends EntityPage {
 	
 	public WelcomePage() {
 		setTitle("AutoExpert. Приветствие");
-
 	}
 
-	
 	@Override
 	protected Entity createEntity() {
-		return null;
+		throw new UnsupportedOperationException("Welcome page should not have an Entity object.");
 	}
 
 	@Override
@@ -28,9 +27,13 @@ public class WelcomePage extends EntityPage {
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	public void getPreviousPageId() {
+		throw new UnsupportedOperationException("Welcome page should not have a Previous Page."); 
 	}
 
+	@Override
+	protected Service createService() {
+		throw new UnsupportedOperationException("Welcome page should not have a Service.");
+	}
 
 }

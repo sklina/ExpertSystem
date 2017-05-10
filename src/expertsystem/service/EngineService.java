@@ -1,53 +1,38 @@
 package expertsystem.service;
 
-import expertsystem.entity.Engine;
 import expertsystem.page.EntityPage;
 import static expertsystem.entity.Engine.State.YES;
 import static expertsystem.entity.Engine.State.NO;
 import expertsystem.page.EngineWorkPage;
 import expertsystem.page.RotationPage;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import net.sf.clipsrules.jni.FactAddressValue;
-import net.sf.clipsrules.jni.MultifieldValue;
 
 /**
  * Состояние
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class EngineService extends AbstractService {
+public class EngineService extends Service {
 
 	@Override
 	public String getNextPageId(EntityPage page) {
-		String currentState = page.getEntity().getCurrentState();
-		String fact;		
+		String currentState = page.getEntity().getCurrentState();	
 		if (currentState.equals(YES.getValue())) {
-			setEngineStart(true);
-			
-//			getEnviroment().eval("(facts)");
-
+			//set engine state
 			getEnviroment().assertString("(engine (state start))");
-//			getEnviroment().eval("(facts)");
 			
 			return EngineWorkPage.ID;
 		} else if (currentState.equals(NO.getValue())) {
-			setEngineStart(false);
+			//set engine state
 			getEnviroment().assertString("(engine (state does-not-start))");
-			fact = addFact(NO.getFact());
-			getEnviroment().assertString(fact);
-			getDetailsMap().put(Engine.NAME, NO.getValue());
+			getEnviroment().assertString("(working-state engine does-not-start)");
 			
+			arrayOfFacts.add("working-state engine does-not-start");
 			return RotationPage.ID;
 		}
-
 		return null;
 	}
 
 	@Override
 	public void getPrevPageId(EntityPage page) {
-		for (int i = 0; i < getDetailsMap().size(); i++) {
-			getDetailsMap().remove(Engine.NAME);
-		}
 	}
 }

@@ -10,12 +10,15 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Ignition extends Entity{
-	public static final String NAME = "Система зажигания";
+
+	public Ignition() {
+		setEntityName("Система зажигания");
+	}
 
 	public enum State {
-		NORM("Зажигание в порядке", "spark-state engine normal"), 
-		NOT_REGULAR("Искра нерегулярна", "spark-state engine irregular-spark"), 
-		NO_SPARK("Искры нет", "spark-state engine irregular-spark");
+		NORM("Зажигание в порядке", ""), 
+		NOT_REGULAR("Искра нерегулярна", ""), 
+		NO_SPARK("Искры нет", "Yes");
 
 		private String value;
 		private String fact;

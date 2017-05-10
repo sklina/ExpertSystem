@@ -10,11 +10,14 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Rotation extends Entity {
-	public static final String NAME = "Вращение двигателя";
+
+	public Rotation() {
+		setEntityName("Вращение двигателя");
+	}
 	
 	public enum State {
-		ROTATE("Вращается", "rotation-state engine rotates"), 
-		NO_ROTATE("Не вращается", "rotation-state engine does-not-rotate");
+		ROTATE("Вращается", "Yes"), 
+		NO_ROTATE("Не вращается", "No");
 		
 		private String value;
 		private String fact;

@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.IgnitionCoil;
+import expertsystem.service.Service;
 import expertsystem.service.IgnitionCoilService;
 
 /**
@@ -13,10 +14,8 @@ public class IgnitionCoilPage extends EntityPage {
 
 	public static final String ID = "IgnitionCoilPage";
 	
-	IgnitionCoilService service = new IgnitionCoilService();
-	
 	public IgnitionCoilPage() {
-		setTitle("Катушка зажигания");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Катушка зажигания проводит ток?");
 		setImageUrl("expertsystem/img/katushka.jpg");
 	}
@@ -27,15 +26,18 @@ public class IgnitionCoilPage extends EntityPage {
 	}
 
 	@Override
+	protected Service createService() {
+		return new IgnitionCoilService();
+	}
+		
+	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
 
 }

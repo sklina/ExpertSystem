@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Repair;
+import expertsystem.service.Service;
 import expertsystem.service.RepairService;
 
 /**
@@ -13,33 +14,32 @@ public class RepairPage extends EntityPage {
 
 	public static final String ID = "RepairPage";
 	
-	RepairService service = new RepairService();
-	
 	public RepairPage() {
-		setTitle("Рекомендация");
-		
+		setTitle(getEntity().getEntityName());
 		setImageUrl("expertsystem/img/remont2.jpg");
 	}
-
-	
 
 	@Override
 	protected Entity createEntity() {
 		return new Repair();
 	}
+	
+	@Override
+	protected Service createService() {
+		return new RepairService();
+	}
 
 	@Override
 	public String getNextPageId() {
-		String res = service.getNextPageId(this);
-		setDescription(service.getDescription());
-		setQuestion(service.getRecommendation());
+		String res = getService().getNextPageId(this);
+		setDescription(getService().getDescription());
+		setQuestion(getService().getRecommendation());
 		return res;
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+	public void getPreviousPageId() {
+		throw new UnsupportedOperationException("Repair page should not have a Previous Page.");
 	}
-
 
 }

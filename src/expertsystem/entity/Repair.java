@@ -10,7 +10,10 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Repair extends Entity {
-	public static final String NAME = "Рекомендация";
+
+	public Repair() {
+		setEntityName("Рекомендация");
+	}
 	 
 	public enum State {
 		MECHANIC("Отвезите Ваш автомобиль к механику", "repair \"Take your car to a mechanic.\""), 

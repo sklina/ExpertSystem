@@ -10,19 +10,28 @@ import java.util.stream.Stream;
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
 public class Contacts extends Entity {
-	public static final String NAME = "Контакты";
+
+	public Contacts() {
+		setEntityName("Контакты");
+	}
 	
 	public enum State {
-		CLEAR("Чистые"), BURNED("Опаленные"), DIRTY("Грязные");
+		CLEAR("Чистые", ""), BURNED("Опаленные", "burned"), DIRTY("Грязные", "contaminated");
 		
 		private String value;
+		private String fact;
 		
-	    private State(String value) {
+	    private State(String value, String fact) {
 			this.value = value;
+			this.fact = fact;
 		} 
 		
 		public String getValue() {
 			return this.value;
+		}
+		
+		public String getFact() {
+			return this.fact;
 		}
 	}
 	

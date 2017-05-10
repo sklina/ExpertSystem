@@ -11,9 +11,12 @@ import java.util.stream.Stream;
  */
 public class BatteryCharge extends Entity{
 
-	public static final String NAME = "Заряд аккумулятора";
+	public BatteryCharge() {
+		setEntityName("Заряд аккумулятора");
+	}
+	
 	public enum State {
-		CHARGE("Заряжен", "charge-state battery charged"), NOT_CHARGE("Не заряжен","charge-state battery dead");
+		CHARGE("Заряжен", "Yes"), NOT_CHARGE("Не заряжен","No");
 		
 		private String value;
 		private String fact;
@@ -31,6 +34,8 @@ public class BatteryCharge extends Entity{
 			return this.fact;
 		}
 	}
+	
+	
 	
 	@Override
 	public List<String> getStates() {

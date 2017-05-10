@@ -18,7 +18,6 @@ public class WizardController {
     private StackPane centerPane;
 	
 	public static FlowHandler fh;
-
 	
     @PostConstruct
     public void init() throws FlowException {
@@ -28,7 +27,6 @@ public class WizardController {
         centerPane.getChildren().add(fh.start(new AnimatedFlowContainer(Duration.millis(320), ContainerAnimations.SWIPE_LEFT)));
     }
 
-	
 	public static FlowHandler getFlow() {
 		return fh;
 	}

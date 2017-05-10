@@ -22,7 +22,6 @@ public class RepairPageController extends AbstractController {
 		getNextButton().setDisable(true);
 		getBackButton().setDisable(true);
 		getBackButton().setDisable(true);
-		
 	}
 
 	@Override

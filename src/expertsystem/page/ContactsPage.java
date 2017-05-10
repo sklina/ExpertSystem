@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Contacts;
 import expertsystem.entity.Entity;
+import expertsystem.service.Service;
 import expertsystem.service.ContactsService;
 
 /**
@@ -13,10 +14,8 @@ public class ContactsPage extends EntityPage{
 
 	public static final String ID = "ContactsPage";
 	
-	ContactsService service = new ContactsService();
-	
 	public ContactsPage() {
-		setTitle("Контакты");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Какое состояние поверхности контактов?");
 		setImageUrl("expertsystem/img/contact.jpg");
 	}
@@ -26,17 +25,20 @@ public class ContactsPage extends EntityPage{
 	protected Entity createEntity() {
 		return new Contacts();
 	}
+	
+	@Override
+	protected Service createService() {
+		return new ContactsService();
+	}
 
 	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
-
+	
 }

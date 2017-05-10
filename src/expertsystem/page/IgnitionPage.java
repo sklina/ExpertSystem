@@ -3,6 +3,7 @@ package expertsystem.page;
 
 import expertsystem.entity.Entity;
 import expertsystem.entity.Ignition;
+import expertsystem.service.Service;
 import expertsystem.service.IgnitionService;
 
 /**
@@ -13,10 +14,8 @@ public class IgnitionPage extends EntityPage {
 
 	public static final String ID = "IgnitionPage";
 	
-	IgnitionService service = new IgnitionService();
-	
 	public IgnitionPage() {
-		setTitle("Система зажигания");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Нет ли перебоев в системе зажигания?");
 		setImageUrl("expertsystem/img/zazhiganie2.jpg");
 	}
@@ -25,18 +24,20 @@ public class IgnitionPage extends EntityPage {
 	protected Entity createEntity() {
 		return new Ignition();
 	}
+	
+	@Override
+	protected Service createService() {
+		return new IgnitionService();
+	}
 
 	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
-
 
 }

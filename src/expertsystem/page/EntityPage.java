@@ -2,7 +2,7 @@
 package expertsystem.page;
 
 import expertsystem.entity.Entity;
-import java.util.Map;
+import expertsystem.service.Service;
 
 /**
  *
@@ -14,17 +14,25 @@ public abstract class EntityPage {
 	private String imageUrl;
 	private String description;
 	private Entity entity;
+	private Service service;
 	
 	
 	protected abstract Entity createEntity();
-
+	protected abstract Service createService();
+	
 	public Entity getEntity() {
 		if (entity == null)
 			entity = createEntity();
 		
 		return entity;
 	}
-
+	
+	public Service getService() {
+		if (service == null)
+			service = createService();
+		
+		return service;
+	}
 
 	public String getQuestion() {
 		return question;
@@ -42,7 +50,6 @@ public abstract class EntityPage {
 		return description;
 	}
 	
-
 	protected final void setTitle(String title) {
 		this.title = title;
 	}
@@ -60,6 +67,6 @@ public abstract class EntityPage {
 	}
 	
 	public abstract String getNextPageId();
-	public abstract String getPreviousPageId();
+	public abstract void getPreviousPageId();
 
 }

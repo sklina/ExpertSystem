@@ -1,9 +1,9 @@
 
 package expertsystem.page;
 
-import expertsystem.entity.Engine;
 import expertsystem.entity.EngineWork;
 import expertsystem.entity.Entity;
+import expertsystem.service.Service;
 import expertsystem.service.EngineWorkService;
 
 /**
@@ -14,10 +14,8 @@ public class EngineWorkPage extends EntityPage {
 
 	public static final String ID = "EngineWorkPage";
 	
-	EngineWorkService service = new EngineWorkService();
-	
 	public EngineWorkPage() {
-		setTitle("Рабочее состояние двигателя");
+		setTitle(getEntity().getEntityName());
 		setQuestion("Как работает двигатель?");
 		setImageUrl("expertsystem/img/dvigatRabSost.jpg");
 	}
@@ -28,15 +26,18 @@ public class EngineWorkPage extends EntityPage {
 	}
 
 	@Override
+	protected Service createService() {
+		return new EngineWorkService();
+	}
+	
+	@Override
 	public String getNextPageId() {
-		return service.getNextPageId(this);
+		return getService().getNextPageId(this);
 	}
 
 	@Override
-	public String getPreviousPageId() {
-		service.getPrevPageId(this);
-		return "";
+	public void getPreviousPageId() {
+		getService().getPrevPageId(this);
 	}
-
 
 }

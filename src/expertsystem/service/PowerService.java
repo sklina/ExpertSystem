@@ -11,31 +11,30 @@ import static expertsystem.entity.Power.State.LOW;
 import expertsystem.entity.Rotation;
 import expertsystem.page.ContactsPage;
 import expertsystem.page.FuelSupplyPage;
-import static expertsystem.service.AbstractService.getDetailsMap;
+import expertsystem.page.PowerPage;
 
 /**
  * состояние
  *
  * @author Alina Skorokhodova <alina.skorokhodova@vistar.su>
  */
-public class PowerService extends AbstractService {
+public class PowerService extends Service {
 
 	@Override
 	public String getNextPageId(EntityPage page) {
 		String currentState = page.getEntity().getCurrentState();
-		String fact;
 		
 		if (currentState.equals(LOW.getValue())) {
-			fact = addFact(LOW.getFact());
-			getEnviroment().assertString(fact);
-			getDetailsMap().put(Power.NAME , LOW.getValue());
+			addQuestionFact(PowerPage.ID, LOW.getFact());
+			getEnviroment().run(1);
 			
+			arrayOfFacts.add("symptom engine low-output");
 			return ContactsPage.ID;
 		} else if (currentState.equals(NORMAL.getValue())) {
-			fact = addFact(NORMAL.getFact());
-			getEnviroment().assertString(fact);
-			getDetailsMap().put(Power.NAME , NORMAL.getValue());
+			addQuestionFact(PowerPage.ID, NORMAL.getFact());
+			getEnviroment().run(1);
 			
+			arrayOfFacts.add("symptom engine not-low-output");
 			return FuelSupplyPage.ID;
 		}
 
@@ -44,9 +43,5 @@ public class PowerService extends AbstractService {
 
 	@Override
 	public void getPrevPageId(EntityPage page) {
-		getDetailsMap().remove(Rotation.NAME);
-		getDetailsMap().remove(BatteryCharge.NAME);
-		getDetailsMap().remove(Ignition.NAME);
-		getDetailsMap().remove(EngineWork.NAME);
 	}
 }
