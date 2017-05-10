@@ -18,7 +18,7 @@ public class EnginePage extends EntityPage {
 	public EnginePage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Заводится ли двигатель?");
-		setImageUrl("expertsystem/img/dvigatel.jpg");
+		setImageUrl("expertsystem/image/dvigatel.jpg");
 	}
 
 	@Override

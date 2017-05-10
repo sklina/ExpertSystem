@@ -17,7 +17,7 @@ public class KnockInTheEnginePage extends EntityPage {
 	public KnockInTheEnginePage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Стучит ли двигатель?");
-		setImageUrl("expertsystem/img/DvigStuk.jpg");
+		setImageUrl("expertsystem/image/DvigStuk.jpg");
 	}
 
 	@Override

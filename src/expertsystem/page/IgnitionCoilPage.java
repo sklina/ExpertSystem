@@ -17,7 +17,7 @@ public class IgnitionCoilPage extends EntityPage {
 	public IgnitionCoilPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Катушка зажигания проводит ток?");
-		setImageUrl("expertsystem/img/katushka.jpg");
+		setImageUrl("expertsystem/image/katushka.jpg");
 	}
 
 	@Override

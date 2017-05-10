@@ -16,7 +16,7 @@ public class RepairPage extends EntityPage {
 	
 	public RepairPage() {
 		setTitle(getEntity().getEntityName());
-		setImageUrl("expertsystem/img/remont2.jpg");
+		setImageUrl("expertsystem/image/remont2.jpg");
 	}
 
 	@Override

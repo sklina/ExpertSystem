@@ -17,7 +17,7 @@ public class EngineWorkPage extends EntityPage {
 	public EngineWorkPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Как работает двигатель?");
-		setImageUrl("expertsystem/img/dvigatRabSost.jpg");
+		setImageUrl("expertsystem/image/dvigatRabSost.jpg");
 	}
 
 	@Override

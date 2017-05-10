@@ -17,7 +17,7 @@ public class IgnitionPage extends EntityPage {
 	public IgnitionPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Нет ли перебоев в системе зажигания?");
-		setImageUrl("expertsystem/img/zazhiganie2.jpg");
+		setImageUrl("expertsystem/image/zazhiganie2.jpg");
 	}
 
 	@Override

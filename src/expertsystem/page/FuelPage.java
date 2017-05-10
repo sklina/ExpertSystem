@@ -17,7 +17,7 @@ public class FuelPage extends EntityPage {
 	public FuelPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Есть ли в баке бензин?");
-		setImageUrl("expertsystem/img/benz1.jpg");
+		setImageUrl("expertsystem/image/benz1.jpg");
 	}
 
 	@Override

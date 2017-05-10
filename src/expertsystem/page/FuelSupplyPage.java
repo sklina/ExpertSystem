@@ -17,7 +17,7 @@ public class FuelSupplyPage extends EntityPage {
 	public FuelSupplyPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Двигатель не сразу реагирует на подачу топлива?");
-		setImageUrl("expertsystem/img/benz.jpg");
+		setImageUrl("expertsystem/image/benz.jpg");
 	}
 
 	@Override

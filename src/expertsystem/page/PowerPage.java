@@ -18,7 +18,7 @@ public class PowerPage extends EntityPage {
 	public PowerPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Какая мощность у двигателя?");
-		setImageUrl("expertsystem/img/power3.jpg");
+		setImageUrl("expertsystem/image/power3.jpg");
 	}
 
 	@Override

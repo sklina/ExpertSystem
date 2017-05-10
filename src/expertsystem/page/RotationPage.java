@@ -17,7 +17,7 @@ public class RotationPage extends EntityPage {
 	public RotationPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Вращается ли двигатель?");
-		setImageUrl("expertsystem/img/DvigVraw.jpg");
+		setImageUrl("expertsystem/image/DvigVraw.jpg");
 	}
 
 	@Override

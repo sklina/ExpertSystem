@@ -17,7 +17,7 @@ public class ContactsPage extends EntityPage{
 	public ContactsPage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Какое состояние поверхности контактов?");
-		setImageUrl("expertsystem/img/contact.jpg");
+		setImageUrl("expertsystem/image/contact.jpg");
 	}
 
 	

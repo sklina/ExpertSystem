@@ -15,7 +15,7 @@ public class BatteryChargePage extends EntityPage{
 	public BatteryChargePage() {
 		setTitle(getEntity().getEntityName());
 		setQuestion("Заряжен ли аккумулятор?");
-		setImageUrl("expertsystem/img/akkum.jpg");
+		setImageUrl("expertsystem/image/akkum.jpg");
 	}
 
 	@Override
